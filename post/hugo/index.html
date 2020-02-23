@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="HanTing&#39;s Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://chenhanting.github.io//https://i0.wp.com/img.hojenjen.com/uploads/2017/10/1506964794-4efdd2f969559e8b1c92e99f32ded48e.jpg">
+    <meta property="twitter:image" content="https://chenhanting.github.io//https://i0.wp.com/img.hojenjen.com/uploads/2017/10/1506964794-4efdd2f969559e8b1c92e99f32ded48e.jpg" />
+    
+
+    
+    <meta name="title" content="How I use Hugo to build a Website" />
+    <meta property="og:title" content="How I use Hugo to build a Website" />
+    <meta property="twitter:title" content="How I use Hugo to build a Website" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>How I use Hugo to build a Website-陳漢庭的部落格 | HanTing Blog</title>
+
+    <link rel="canonical" href="/post/hugo/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">HanTing&#39;s Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech">tech</a>
+                        </li>
+                        
+                    
+                    
+		    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('https://i0.wp.com/img.hojenjen.com/uploads/2017/10/1506964794-4efdd2f969559e8b1c92e99f32ded48e.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/hugo" title="hugo">
+                            hugo
+                        </a>
+                        
+                        <a class="tag" href="/tags/static-site-generators" title="static site generators">
+                            static site generators
+                        </a>
+                        
+                    </div>
+                    <h1>How I use Hugo to build a Website</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                            HanTing
+                         
+                        on 
+                        Sunday, January 19, 2020
+                        
+                            <span id="/post/hugo/" class="leancloud_visitors meta_data_item" data-flag-title="">
+    <span class="post-meta-item-icon">
+      <span class="octicon octicon-eye"></span> 
+    </span>
+    <i class="fa fa-eye"></i>
+    <span class="old-visitors-count" style="display: none;"></span>
+    <span class="leancloud-visitors-count"></span>
+</span>
+
+
+
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+
+<script>
+	AV.initialize("", "");
+</script>
+
+<script type="text/javascript">
+function showTime(Counter) {
+    var query = new AV.Query(Counter);
+    var entries = [];
+    var $visitors = $(".leancloud_visitors");
+
+    $visitors.each(function() {
+        entries.push($(this).attr("id").trim());
+    });
+
+    query.containedIn('url', entries);
+    query.find()
+        .done(function(results) {
+            var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+            var OLD_COUNT_CONTAINER_REF = '.old-visitors-count';
+
+            
+            
+            
+            
+
+            for (var i = 0; i < results.length; i++) {
+                var item = results[i];
+                var url = item.get('url');
+                var time = item.get('time');
+                var element = document.getElementById(url);
+
+                $(element).find(COUNT_CONTAINER_REF).text(time);
+            }
+            for (var i = 0; i < entries.length; i++) {
+                var url = entries[i];
+                var element = document.getElementById(url);
+                var countSpan = $(element).find(COUNT_CONTAINER_REF);
+                if (countSpan.text() == '') {
+                    var oldCountSpan = $(element).find(OLD_COUNT_CONTAINER_REF).text();
+                    if(oldCountSpan!=''){
+                        countSpan.text(0+parseInt(oldCountSpan));
+                    }else{
+                        countSpan.text(0);          
+                    }
+                }
+            }
+        })
+        .fail(function(object, error) {
+            console.log("Error: " + error.code + " " + error.message);
+        });
+}
+
+function addCount(Counter) {
+    var $visitors = $(".leancloud_visitors");
+    var url = $visitors.attr('id').trim();
+    var title = $visitors.attr('data-flag-title').trim();
+    var query = new AV.Query(Counter);
+
+    query.equalTo("url", url);
+    query.find({
+        success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment("time");
+                counter.save(null, {
+                    success: function(counter) {
+                        var $element = $(document.getElementById(url));
+                        $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+                var newcounter = new Counter();
+                 
+                var acl = new AV.ACL();
+                acl.setPublicReadAccess(true);
+                acl.setPublicWriteAccess(true);
+                newcounter.setACL(acl);
+                 
+                newcounter.set("title", title);
+                newcounter.set("url", url);
+                var OLD_COUNT_CONTAINER_REF = '.old-visitors-count';
+                var $element = $(document.getElementById(url));
+                var oldCountSpan = $element.find(OLD_COUNT_CONTAINER_REF).text();
+                if(oldCountSpan!=''){
+                    newcounter.set("time", parseInt(oldCountSpan)+1);
+                }else{
+ 	                    newcounter.set("time",  1);
+                }
+                newcounter.save(null, {
+                    success: function(newcounter) {
+                        var $element = $(document.getElementById(url));
+                        $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                    },
+                    error: function(newcounter, error) {
+                        console.log('Failed to create');
+                    }
+                });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + " " + error.message);
+        }
+    });
+}
+$(function() {
+    var Counter = AV.Object.extend("Counter");
+    
+    
+    if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+    } else {
+        showTime(Counter);
+    }
+});
+</script>
+
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>現在的發文平台很多，不論會不會程式都能輕易的上手。Facebook、Line、Youtube、IG，它們主要用處還是在於導流。 Blogger、WordPress 是老牌的部落格系統，許多人使用Medium作為部落格系統。Wix 為近期常常在youtube廣告的部落格平台，以及最近誤打誤撞找到的webnote，也都是方便好用的部落格平台</p>
+<p>靜態網站產生器 (Static Site Generator) 是輕量級部落格架站的好幫手。 Jekyll、Hexo、Hugo 是<a href="https://raychiutw.github.io/2019/Static-Site-Generator-Comparison/">目前</a>聽過比較有名的工具。這邊主要使用 Hugo撰寫，目前看到Hugo可以選擇的主題已經夠我去選擇，剩下的就是了解Hugo內部的遊戲規則</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>语言</th>
+<th>優點</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jekyll</td>
+<td>ruby</td>
+<td>主題多、使用者多、Github Pages支援</td>
+<td>需要ruby环境</td>
+</tr>
+<tr>
+<td>Hexo</td>
+<td>nodejs</td>
+<td>大陸開發的平台，因此中文主題較多</td>
+<td>需下載很多nodejs庫，版本更新幅度大</td>
+</tr>
+<tr>
+<td>Hugo</td>
+<td>golang</td>
+<td>跨平台、性能强</td>
+<td>主題選擇較少，版本更新幅度大</td>
+</tr>
+</tbody>
+</table>
+<p>目前使用的部落格主題為 <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">Clean White</a>，會使用它是因為畫面簡單樸素，具有標籤功能與分類功能，功能完善。</p>
+<p>使用Clean White的範例：<a href="https://zhaohuabing.com/">範例1</a>、<a href="https://siddharam.com.tw/post/20190418/">範例2</a></p>
+<h2 id="安裝">安裝</h2>
+<p>開始前先確認電腦是否有安裝<code>git</code>、<code>npm</code>、<code>VSCode</code></p>
+<p>使用<code>hugo</code>前先安裝hugo，以mac來說執行<code>brew install hugo</code>，其他環境則執行<code>npm install hugo</code>即可</p>
+<h2 id="實作">實作</h2>
+<p>建立文章：<code>hugo new post/post01.md</code></p>
+<p>新增樣式模板：</p>
+<ul>
+<li><code>cd themes</code></li>
+<li><code>git clone https://github.com/zhaohuabing/hugo-theme-cleanwhite.git</code></li>
+</ul>
+<p>回到部落格目錄，並啟動 Hugo server
+<code>hugo server --buildDrafts</code>
+瀏覽器中開啟：<a href="http://localhost:1313/">http://localhost:1313</a> 就能進入首頁。</p>
+<p>hugo server 支援 hot reload，任何 html、css、js 修改經儲存後，都能即時顯示。
+<code>--buildDrafts</code> （<code>-D</code>）表示草稿也能被看見。</p>
+<p>建立html等靜態頁面：只要輸入<code>hugo</code>就會看到 /public 有了可佈署檔案。若輸入<code>hugo --verbose</code>即會在<code>public</code>資料夾內產出對應的html，並印出錯誤訊息</p>
+<h2 id="clean-white">Clean White</h2>
+<p>以下為 <a href="https://github.com/zhaohuabing/hugo-theme-cleanwhite">Clean White</a> 範例的設定檔 <code>config.toml</code>，若要進行設定可以參考此設定</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">baseurl</span> = <span style="color:#e6db74">&#34;https://zhaohuabing.com&#34;</span>
+<span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Huabing Blog&#34;</span>
+<span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;hugo-theme-cleanwhite&#34;</span>
+<span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;en-us&#34;</span>
+<span style="color:#75715e"># Enable comments by entering your Disqus shortname</span>
+<span style="color:#a6e22e">disqusShortname</span> = <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#a6e22e">googleAnalytics</span> = <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#a6e22e">preserveTaxonomyNames</span> = <span style="color:#66d9ef">true</span>
+<span style="color:#a6e22e">paginate</span> = <span style="color:#ae81ff">5</span> <span style="color:#75715e">#frontpage pagination</span>
+<span style="color:#a6e22e">hasCJKLanguage</span> = <span style="color:#66d9ef">true</span>
+
+[<span style="color:#a6e22e">outputs</span>]
+<span style="color:#a6e22e">home</span> = [<span style="color:#e6db74">&#34;HTML&#34;</span>, <span style="color:#e6db74">&#34;RSS&#34;</span>, <span style="color:#e6db74">&#34;Algolia&#34;</span>]
+
+[<span style="color:#a6e22e">params</span>]
+  <span style="color:#a6e22e">header_image</span> = <span style="color:#e6db74">&#34;img/home-bg-jeep.jpg&#34;</span>
+  <span style="color:#a6e22e">SEOTitle</span> = <span style="color:#e6db74">&#34;赵化冰的博客 | Zhaohuabing Blog&#34;</span>
+  <span style="color:#a6e22e">description</span> = <span style="color:#e6db74">&#34;赵化冰，程序员, 开源爱好者，生活探险家 | 这里是 赵化冰 的博客，与你一起发现更大的世界。&#34;</span>
+  <span style="color:#a6e22e">keyword</span> = <span style="color:#e6db74">&#34;赵化冰, zhaohuabing, Zhaohuabing, , 赵化冰的网络日志, 赵化冰的博客, Zhaohuabing Blog, 博客, 个人网站, 互联网, Web, 云原生, PaaS, Istio, Kubernetes, 微服务, Microservice&#34;</span>
+  <span style="color:#a6e22e">slogan</span> = <span style="color:#e6db74">&#34;路在脚下，心向远方&#34;</span>
+
+  <span style="color:#a6e22e">image_404</span> = <span style="color:#e6db74">&#34;img/404-bg.jpg&#34;</span>
+  <span style="color:#a6e22e">title_404</span> = <span style="color:#e6db74">&#34;你来到了没有知识的荒原 :(&#34;</span>
+  <span style="color:#a6e22e">omit_categories</span> = <span style="color:#66d9ef">false</span>
+
+  <span style="color:#75715e"># leancloud storage for page view counter</span>
+  <span style="color:#a6e22e">page_view_conter</span> = <span style="color:#66d9ef">false</span>
+  <span style="color:#a6e22e">leancloud_app_id</span> = <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#a6e22e">leancloud_app_key</span> = <span style="color:#e6db74">&#34;&#34;</span>
+
+  <span style="color:#75715e"># algolia site search</span>
+  <span style="color:#a6e22e">algolia_search</span> = <span style="color:#66d9ef">true</span>
+  <span style="color:#a6e22e">algolia_appId</span> = <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#a6e22e">algolia_indexName</span> = <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#a6e22e">algolia_apiKey</span> = <span style="color:#e6db74">&#34;&#34;</span>
+
+  <span style="color:#75715e"># Sidebar settings</span>
+  <span style="color:#a6e22e">sidebar_about_description</span> = <span style="color:#e6db74">&#34;Software Developer, Open Source Enthusiast and Life Adventurer&#34;</span>
+  <span style="color:#75715e">#sidebar_avatar = &#34;img/avatar-zhaohuabing.jpg&#34;      # use absolute URL, seeing it&#39;s used in both `/` and `/about/`</span>
+  <span style="color:#a6e22e">sidebar_avatar</span> = <span style="color:#e6db74">&#34;img/zhaohuabing.png&#34;</span>      <span style="color:#75715e"># use absolute URL, seeing it&#39;s used in both `/` and `/about/`</span>
+
+  <span style="color:#a6e22e">featured_tags</span> = <span style="color:#66d9ef">true</span>
+  <span style="color:#a6e22e">featured_condition_size</span> = <span style="color:#ae81ff">1</span>
+
+  <span style="color:#75715e"># Baidu Analytics</span>
+  <span style="color:#a6e22e">ba_track_id</span> = <span style="color:#e6db74">&#34;&#34;</span>
+
+  <span style="color:#75715e"># We need a proxy to access Disqus api in China</span>
+  <span style="color:#75715e"># Follow https://github.com/zhaohuabing/disqus-php-api to set up your own disqus proxy</span>
+  <span style="color:#a6e22e">disqus_proxy</span> = <span style="color:#e6db74">&#34;&#34;</span>
+  <span style="color:#a6e22e">disqus_site</span> = <span style="color:#e6db74">&#34;&#34;</span>
+
+  <span style="color:#75715e">#Enable wechat pay &amp; alipay to allow readers send reward money if they like the articles</span>
+  <span style="color:#a6e22e">reward</span> = <span style="color:#66d9ef">true</span>
+  <span style="color:#75715e"># reward_guide = &#34;如果这篇文章对你有用,请随意打赏&#34;</span>
+
+  <span style="color:#a6e22e">friends</span> = <span style="color:#66d9ef">true</span>
+  <span style="color:#a6e22e">bookmarks</span> = <span style="color:#66d9ef">false</span>
+  <span style="color:#a6e22e">about_me</span> = <span style="color:#66d9ef">true</span>
+
+  <span style="color:#75715e"># Include any custom CSS and/or JS files, url or relative to /static folder</span>
+  <span style="color:#75715e">#custom_css = [&#34;css/lightbox.css&#34;, &#34;https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css&#34;, &#34;css/main.css&#34;]</span>
+  <span style="color:#75715e">#custom_js = [&#34;js/lightbox.js&#34;, &#34;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js&#34;, &#34;js/main.js&#34;]</span>
+
+  <span style="color:#75715e"># Highlight.js theme</span>
+  <span style="color:#75715e"># demo: https://highlightjs.org/static/demo/</span>
+  <span style="color:#a6e22e">highlightjs</span> = <span style="color:#e6db74">&#34;docco&#34;</span>
+
+  [<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">social</span>]
+  <span style="color:#a6e22e">rss</span>            = <span style="color:#66d9ef">true</span>
+  <span style="color:#a6e22e">email</span>          = <span style="color:#e6db74">&#34;youremail@gmail.com&#34;</span>
+  <span style="color:#75715e">#facebook      = &#34;full profile url in facebook&#34;</span>
+  <span style="color:#75715e">#googleplus    = &#34;full profile url in googleplus&#34;</span>
+  <span style="color:#75715e">#twitter       = &#34;full profile url in twitter&#34;</span>
+  <span style="color:#a6e22e">linkedin</span>       = <span style="color:#e6db74">&#34;https://www.linkedin.com/in/yourlinkedinid&#34;</span>
+  <span style="color:#a6e22e">stackoverflow</span>  = <span style="color:#e6db74">&#34;https://stackoverflow.com/users/yourstackoverflowid&#34;</span>
+  <span style="color:#75715e">#instagram     = &#34;full profile url in instagram&#34;</span>
+  <span style="color:#a6e22e">github</span>         = <span style="color:#e6db74">&#34;https://github.com/yourgithub&#34;</span>
+  <span style="color:#a6e22e">wechat</span>         = <span style="color:#e6db74">&#34;your wechat qr code image&#34;</span>
+<span style="color:#75715e">#  medium         = &#34;full profile url in medium&#34;</span>
+  <span style="color:#75715e">#pinterest     = &#34;full profile url in pinterest&#34;</span>
+  <span style="color:#75715e">#reddit        = &#34;full profile url in reddit&#34;</span>
+  <span style="color:#75715e">#gitlab        = &#34;full profile url in gitlab&#34;</span>
+  <span style="color:#75715e">#mastodon      = &#34;full profile url in mastodon&#34;</span>
+  <span style="color:#75715e">#keybase       = &#34;full profile url in keybase&#34;</span>
+  <span style="color:#75715e">#git           = &#34;full profile url for git user&#34;</span>
+
+  [[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">friend_link</span>]]
+  <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Linda的博客&#34;</span>
+  <span style="color:#a6e22e">href</span> =  <span style="color:#e6db74">&#34;https://zhaozhihan.com&#34;</span>
+
+  [[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">bookmark_link</span>]]
+  <span style="color:#a6e22e">title</span> =  <span style="color:#e6db74">&#34;Martin Fowler&#34;</span>
+  <span style="color:#a6e22e">href</span> =  <span style="color:#e6db74">&#34;https://martinfowler.com&#34;</span>
+  [[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">bookmark_link</span>]]
+  <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;ServiceMesher&#34;</span>
+  <span style="color:#a6e22e">href</span> =  <span style="color:#e6db74">&#34;http://www.servicemesher.com&#34;</span>
+  [[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">bookmark_link</span>]]
+  <span style="color:#a6e22e">title</span> =  <span style="color:#e6db74">&#34;Pxhere&#34;</span>
+  <span style="color:#a6e22e">href</span> = <span style="color:#e6db74">&#34;https://pxhere.com&#34;</span>
+  [[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">bookmark_link</span>]]
+  <span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;unsplash&#34;</span>
+  <span style="color:#a6e22e">href</span> = <span style="color:#e6db74">&#34;https://unsplash.com&#34;</span>
+
+  [[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">addtional_menus</span>]]
+  <span style="color:#a6e22e">title</span> =  <span style="color:#e6db74">&#34;BOOKS&#34;</span>
+  <span style="color:#a6e22e">href</span> =  <span style="color:#e6db74">&#34;/top/books/&#34;</span>
+  [[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">addtional_menus</span>]]
+  <span style="color:#a6e22e">title</span> =  <span style="color:#e6db74">&#34;ABOUT&#34;</span>
+  <span style="color:#a6e22e">href</span> =  <span style="color:#e6db74">&#34;/top/about/&#34;</span>
+
+[<span style="color:#a6e22e">outputFormats</span>.<span style="color:#a6e22e">Algolia</span>]
+<span style="color:#a6e22e">baseName</span> = <span style="color:#e6db74">&#34;algolia&#34;</span>
+<span style="color:#a6e22e">isPlainText</span> = <span style="color:#66d9ef">true</span>
+<span style="color:#a6e22e">mediaType</span> = <span style="color:#e6db74">&#34;application/json&#34;</span>
+<span style="color:#a6e22e">notAlternative</span> = <span style="color:#66d9ef">true</span>
+
+[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">algolia</span>]
+<span style="color:#a6e22e">vars</span> = [<span style="color:#e6db74">&#34;title&#34;</span>, <span style="color:#e6db74">&#34;summary&#34;</span>, <span style="color:#e6db74">&#34;date&#34;</span>, <span style="color:#e6db74">&#34;publishdate&#34;</span>, <span style="color:#e6db74">&#34;expirydate&#34;</span>, <span style="color:#e6db74">&#34;permalink&#34;</span>]
+<span style="color:#a6e22e">params</span> = [<span style="color:#e6db74">&#34;categories&#34;</span>, <span style="color:#e6db74">&#34;tags&#34;</span>]
+</code></pre></div><h2 id="遇到問題">遇到問題</h2>
+<p>當使用Hugo時會發現一些問題，像是</p>
+<ul>
+<li>怎麼沒有<code>查看更多</code>的連結？</li>
+<li>要怎麼為自己的文章進行分類？</li>
+<li>如何貼出漂亮的code block？</li>
+</ul>
+<p>首先針對<a href="https://blog.jasonvfang.top/post/hugo_summary_len/">查看更多</a>的部分，只需加入<code>&lt;!--more--&gt;</code>即可完成，毋需更多設定。</p>
+<p>分類文章的部分，詳情請看 <a href="%5Bhttps://orianna-zzo.github.io/sci-tech/2018-01/blog%E5%85%BB%E6%88%90%E8%AE%B04-hugo%E4%B8%AD%E5%A2%9E%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/%5D(https://orianna-zzo.github.io/sci-tech/2018-01/blog%E5%85%BB%E6%88%90%E8%AE%B04-hugo%E4%B8%AD%E5%A2%9E%E5%8A%A0tags%E7%AD%89%E5%88%86%E7%B1%BB/)">Taxonomy</a></p>
+<p>Code block 請參照<a href="https://sujingjhong.com/posts/how-to-add-prismjs-into-hugo/">這裡</a>，而block的css原始碼從<a href="https://prismjs.com/download.html#themes=prism-okaidia&amp;languages=markup+css+clike+javascript+abap+abnf+actionscript+ada+antlr4+apacheconf+apl+applescript+aql+arduino+arff+asciidoc+asm6502+aspnet+autohotkey+autoit+bash+basic+batch+bbcode+bison+bnf+brainfuck+brightscript+bro+c+csharp+cpp+cil+coffeescript+cmake+clojure+crystal+csp+css-extras+d+dart+diff+django+dns-zone-file+docker+ebnf+eiffel+ejs+elixir+elm+etlua+erb+erlang+fsharp+firestore-security-rules+flow+fortran+ftl+gcode+gdscript+gedcom+gherkin+git+glsl+gml+go+graphql+groovy+haml+handlebars+haskell+haxe+hcl+http+hpkp+hsts+ichigojam+icon+inform7+ini+io+j+java+javadoc+javadoclike+javastacktrace+jolie+jq+jsdoc+js-extras+js-templates+json+jsonp+json5+julia+keyman+kotlin+latex+latte+less+lilypond+liquid+lisp+livescript+lolcode+lua+makefile+markdown+markup-templating+matlab+mel+mizar+monkey+moonscript+n1ql+n4js+nand2tetris-hdl+nasm+neon+nginx+nim+nix+nsis+objectivec+ocaml+opencl+oz+parigp+parser+pascal+pascaligo+pcaxis+perl+php+phpdoc+php-extras+plsql+powershell+processing+prolog+properties+protobuf+pug+puppet+pure+python+q+qml+qore+r+jsx+tsx+renpy+reason+regex+rest+rip+roboconf+robotframework+ruby+rust+sas+sass+scss+scala+scheme+shell-session+smalltalk+smarty+solidity+soy+sparql+splunk-spl+sqf+sql+stylus+swift+tap+tcl+textile+toml+tt2+turtle+twig+typescript+t4-cs+t4-vb+t4-templating+vala+vbnet+velocity+verilog+vhdl+vim+visual-basic+wasm+wiki+xeora+xojo+xquery+yaml+zig">這裡</a>下載</p>
+<p>Code Block 改動的部份如下程式碼所示</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--</span><span style="color:#75715e"> Use the docco color scheme of highlight.js to highlight the code in the page </span><span style="color:#75715e">--&gt;</span>
+{{ if .Site.Params.highlightjs }}
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/{{ .Site.Params.highlightjs }}.min.css&#34;</span>&gt;
+{{ else }}
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/prism.css&#34;</span>&gt;
+{{ end }}
+</code></pre></div><h2 id="存放空間">存放空間</h2>
+<p>靜態網站的免費存放空間，較有名的有<a href="http://blog.e-happy.com.tw/%E7%B6%B2%E7%AB%99%E6%9E%B6%E8%A8%AD-%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E6%8A%8A%E7%B6%B2%E7%AB%99%E6%9E%B6%E8%A8%AD%E5%88%B0-google-drive-%E9%9B%B2%E7%AB%AF%E7%A9%BA%E9%96%93%E4%B8%8A/">Google Drive</a>和 <a href="https://gitbook.tw/chapters/github/using-github-pages.html">github</a></p>
+<p>目前收錄的主題樣板為<a href="https://themes.gohugo.io/github-style/">Github</a>, <a href="https://themes.gohugo.io/hugo-theme-zen/">Zen</a>, <a href="https://themes.gohugo.io/hugo-theme-hamburg/">Hamburg</a>,  <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">Clean White</a></p>
+<h3 id="參考資料">參考資料</h3>
+<ul>
+<li>
+<p>使用jekyll：https://wcc723.github.io/jekyll/2014/01/04/what-is-jekyll/</p>
+</li>
+<li>
+<p>使用Hugo說明</p>
+<p>本部落格主要的參考教學在 <a href="https://siddharam.com.tw/post/20190418/">Hugo 建立部落格</a></p>
+<ul>
+<li><a href="https://coolgood88142.github.io/zh-tw/posts/hugo/">https://coolgood88142.github.io/zh-tw/posts/hugo/</a></li>
+<li><a href="https://kaichu.io/2015/07/12/my-first-post/">https://kaichu.io/2015/07/12/my-first-post/</a></li>
+<li><a href="https://carsonwah.github.io/15213187969126.html">https://carsonwah.github.io/15213187969126.html</a></li>
+<li><a href="https://www.slideshare.net/kylinfish/build-personal-website-via-hugo">https://www.slideshare.net/kylinfish/build-personal-website-via-hugo</a></li>
+<li>更多功能：https://www.jianshu.com/p/076279c9ceea</li>
+</ul>
+</li>
+<li>
+<p>使用CI自動化部屬靜態部落格：https://opso.coding.me/post/hugo-auto-deploy/</p>
+</li>
+</ul>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/post/rails/" data-toggle="tooltip" data-placement="top" title="Ruby on Rails Note">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/rails" title="rails">
+                            rails
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ruby-on-rails" title="ruby-on-rails">
+                            ruby-on-rails
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                    
+                    <li>
+                        <a href="mailto:k445566778899k@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=100000397072220">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/ChenHanTing">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/feed/?trk=onboarding-landing">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; HanTing&#39;s Blog 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

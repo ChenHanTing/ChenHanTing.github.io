@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>session on HanTing&#39;s Blog</title>
+    <link>https://chenhanting.github.io/tags/session/</link>
+    <description>Recent content in session on HanTing&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Jan 2020 18:32:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://chenhanting.github.io/tags/session/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What is the difference between Session and Cookie</title>
+      <link>https://chenhanting.github.io/post/session/</link>
+      <pubDate>Thu, 23 Jan 2020 18:32:00 +0800</pubDate>
+      
+      <guid>https://chenhanting.github.io/post/session/</guid>
+      <description>&lt;p&gt;Rails面試中其中之一最容易被問的問題，就是Session與Cookie的差別。Session和Cookie被官方文件，以及Ihower的實戰聖經歸類在Controller的文章中。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

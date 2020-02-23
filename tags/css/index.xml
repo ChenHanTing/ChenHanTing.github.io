@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSS on HanTing&#39;s Blog</title>
+    <link>https://chenhanting.github.io/tags/css/</link>
+    <description>Recent content in CSS on HanTing&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Jan 2020 23:41:20 +0800</lastBuildDate>
+    
+	<atom:link href="https://chenhanting.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Frontend Note</title>
+      <link>https://chenhanting.github.io/post/front-end/</link>
+      <pubDate>Mon, 20 Jan 2020 23:41:20 +0800</pubDate>
+      
+      <guid>https://chenhanting.github.io/post/front-end/</guid>
+      <description>&lt;p&gt;到職工作為Ruby on Rails後端工程師，碰到前端的機會實在少之又少。以下統整出2019年到職至今碰到前端相關的所有筆記內容。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="HanTing&#39;s Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://chenhanting.github.io//https://i0.wp.com/img.hojenjen.com/uploads/2017/10/1506964794-4efdd2f969559e8b1c92e99f32ded48e.jpg">
+    <meta property="twitter:image" content="https://chenhanting.github.io//https://i0.wp.com/img.hojenjen.com/uploads/2017/10/1506964794-4efdd2f969559e8b1c92e99f32ded48e.jpg" />
+    
+
+    
+    <meta name="title" content="Ruby on Rails Note" />
+    <meta property="og:title" content="Ruby on Rails Note" />
+    <meta property="twitter:title" content="Ruby on Rails Note" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Ruby on Rails Note-陳漢庭的部落格 | HanTing Blog</title>
+
+    <link rel="canonical" href="/post/rails/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">HanTing&#39;s Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech">tech</a>
+                        </li>
+                        
+                    
+                    
+		    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('https://i0.wp.com/img.hojenjen.com/uploads/2017/10/1506964794-4efdd2f969559e8b1c92e99f32ded48e.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/ruby" title="Ruby">
+                            Ruby
+                        </a>
+                        
+                        <a class="tag" href="/tags/rails" title="Rails">
+                            Rails
+                        </a>
+                        
+                        <a class="tag" href="/tags/ruby-on-rails" title="Ruby on Rails">
+                            Ruby on Rails
+                        </a>
+                        
+                    </div>
+                    <h1>Ruby on Rails Note</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                            HanTing
+                         
+                        on 
+                        Monday, January 20, 2020
+                        
+                            <span id="/post/rails/" class="leancloud_visitors meta_data_item" data-flag-title="">
+    <span class="post-meta-item-icon">
+      <span class="octicon octicon-eye"></span> 
+    </span>
+    <i class="fa fa-eye"></i>
+    <span class="old-visitors-count" style="display: none;"></span>
+    <span class="leancloud-visitors-count"></span>
+</span>
+
+
+
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+
+<script>
+	AV.initialize("", "");
+</script>
+
+<script type="text/javascript">
+function showTime(Counter) {
+    var query = new AV.Query(Counter);
+    var entries = [];
+    var $visitors = $(".leancloud_visitors");
+
+    $visitors.each(function() {
+        entries.push($(this).attr("id").trim());
+    });
+
+    query.containedIn('url', entries);
+    query.find()
+        .done(function(results) {
+            var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+            var OLD_COUNT_CONTAINER_REF = '.old-visitors-count';
+
+            
+            
+            
+            
+
+            for (var i = 0; i < results.length; i++) {
+                var item = results[i];
+                var url = item.get('url');
+                var time = item.get('time');
+                var element = document.getElementById(url);
+
+                $(element).find(COUNT_CONTAINER_REF).text(time);
+            }
+            for (var i = 0; i < entries.length; i++) {
+                var url = entries[i];
+                var element = document.getElementById(url);
+                var countSpan = $(element).find(COUNT_CONTAINER_REF);
+                if (countSpan.text() == '') {
+                    var oldCountSpan = $(element).find(OLD_COUNT_CONTAINER_REF).text();
+                    if(oldCountSpan!=''){
+                        countSpan.text(0+parseInt(oldCountSpan));
+                    }else{
+                        countSpan.text(0);          
+                    }
+                }
+            }
+        })
+        .fail(function(object, error) {
+            console.log("Error: " + error.code + " " + error.message);
+        });
+}
+
+function addCount(Counter) {
+    var $visitors = $(".leancloud_visitors");
+    var url = $visitors.attr('id').trim();
+    var title = $visitors.attr('data-flag-title').trim();
+    var query = new AV.Query(Counter);
+
+    query.equalTo("url", url);
+    query.find({
+        success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment("time");
+                counter.save(null, {
+                    success: function(counter) {
+                        var $element = $(document.getElementById(url));
+                        $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+                var newcounter = new Counter();
+                 
+                var acl = new AV.ACL();
+                acl.setPublicReadAccess(true);
+                acl.setPublicWriteAccess(true);
+                newcounter.setACL(acl);
+                 
+                newcounter.set("title", title);
+                newcounter.set("url", url);
+                var OLD_COUNT_CONTAINER_REF = '.old-visitors-count';
+                var $element = $(document.getElementById(url));
+                var oldCountSpan = $element.find(OLD_COUNT_CONTAINER_REF).text();
+                if(oldCountSpan!=''){
+                    newcounter.set("time", parseInt(oldCountSpan)+1);
+                }else{
+ 	                    newcounter.set("time",  1);
+                }
+                newcounter.save(null, {
+                    success: function(newcounter) {
+                        var $element = $(document.getElementById(url));
+                        $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                    },
+                    error: function(newcounter, error) {
+                        console.log('Failed to create');
+                    }
+                });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + " " + error.message);
+        }
+    });
+}
+$(function() {
+    var Counter = AV.Object.extend("Counter");
+    
+    
+    if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+    } else {
+        showTime(Counter);
+    }
+});
+</script>
+
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>上班之後，對於Ruby on Rails的了解大概有個雛形。上班開始接觸<code>gitlab</code>，與大家一起合作專案，也才開始修改其他人的專案。在不同的專案中，可以看到許多專案背後的歷史，以及工具使用的不同。有些專案善用<code>common</code>、有些善用<code>services</code>、有些善用<code>form object</code>。</p>
+<p>Rails 現在雖然成為了冷門語言，在台灣Rails的職缺越來越少。不過不可否認，Rails是個及其美妙的語言，語法要多優雅就多優雅。我在接觸Rails後記錄了不少筆記，想要把這些筆記內容分享給大家</p>
+<h2 id="ruby">Ruby</h2>
+<h3 id="基本用法">基本用法</h3>
+<ol>
+<li>
+<p>is_a?</p>
+<p>Returns true if <em>class</em> is the <a href="https://apidock.com/ruby/Object/class">class</a> of <em>obj,</em> or if <em>class</em> is one of the superclasses of <em>obj</em> or modules included in <em>obj</em>. Here is a <a href="https://apidock.com/ruby/Object/is_a%3F">reference</a>.</p>
+<p>針對第一點的補充說明，參考源<a href="https://ithelp.ithome.com.tw/articles/10160216">[1]</a>、<a href="https://ithelp.ithome.com.tw/articles/10205276?sc=iThelpR">[2]</a>說明.class、instance_of?、 equal?、is_a?、==、===、.eql?的使用方式</p>
+</li>
+<li>
+<p>.nil? .empty? .blank? .present?</p>
+<p>特性：<code>.present? &lt;-&gt; .blank?</code></p>
+<p>更多參考資料請查看<a href="https://mgleon08.github.io/blog/2015/12/16/ruby-on-rail-nil-empty-blank-present/">這裡</a></p>
+</li>
+<li>
+<p>case&hellip;when</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">fruit <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">banana</span><span style="color:#e6db74">&#34;</span>
+
+output <span style="color:#f92672">=</span> <span style="color:#66d9ef">case</span> fruit
+         <span style="color:#66d9ef">when</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">apple</span><span style="color:#e6db74">&#34;</span>
+           <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">HI</span><span style="color:#e6db74">&#34;</span>
+         <span style="color:#66d9ef">when</span> <span style="color:#f92672">*</span>(<span style="color:#e6db74">%w[</span><span style="color:#e6db74">pear banana</span><span style="color:#e6db74">]</span>)
+           <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello</span><span style="color:#e6db74">&#34;</span>
+         <span style="color:#66d9ef">else</span>
+           <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">NO</span><span style="color:#e6db74">&#34;</span>
+         <span style="color:#66d9ef">end</span>
+</code></pre></div><p>更多參考資料請查看<a href="https://bengribaudo.com/blog/2013/12/31/2530/ruby-case-testing-against-arrays-of-values">這裡</a></p>
+</li>
+<li>
+<p>send 動態叫入方法：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">print <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Search for: </span><span style="color:#e6db74">&#34;</span>
+request <span style="color:#f92672">=</span> gets<span style="color:#f92672">.</span>chomp
+
+<span style="color:#66d9ef">if</span> request <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">writer</span><span style="color:#e6db74">&#34;</span>
+  puts book<span style="color:#f92672">.</span>writer
+<span style="color:#66d9ef">elsif</span> request <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">press</span><span style="color:#e6db74">&#34;</span>
+  puts book<span style="color:#f92672">.</span>press
+elseif request <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">date</span><span style="color:#e6db74">&#34;</span>
+  puts book<span style="color:#f92672">.</span>date
+<span style="color:#f92672">...</span><span style="color:#f92672">...</span>
+</code></pre></div><p>以上的程式碼可以改寫成</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">request <span style="color:#f92672">=</span> gets<span style="color:#f92672">.</span>chomp
+
+<span style="color:#66d9ef">if</span> book<span style="color:#f92672">.</span>respond_to?(request)
+  puts book<span style="color:#f92672">.</span>send(request)
+<span style="color:#66d9ef">else</span>
+  puts <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Input error</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># 官方的使用方式</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Klass</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">hello</span>(<span style="color:#f92672">*</span>args)
+    <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> args<span style="color:#f92672">.</span>join(<span style="color:#e6db74">&#39; &#39;</span>)
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+k <span style="color:#f92672">=</span> <span style="color:#66d9ef">Klass</span><span style="color:#f92672">.</span>new
+k<span style="color:#f92672">.</span>send <span style="color:#e6db74">:hello</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">gentle</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">readers</span><span style="color:#e6db74">&#34;</span>   <span style="color:#75715e">#=&gt; &#34;Hello gentle readers&#34;</span>
+</code></pre></div><p>若想看更多請參考<a href="https://ruby-china.org/topics/4313">這裡</a> 和 <a href="https://apidock.com/ruby/Object/send">這裡</a></p>
+</li>
+<li>
+<p>在JVD，<code>respond_to? </code>跟<code>send</code>常常搭配一起使用，以下為<code>respond_to?</code> 的用法：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">obj <span style="color:#f92672">=</span> <span style="color:#66d9ef">Object</span><span style="color:#f92672">.</span>new
+<span style="color:#66d9ef">if</span> obj<span style="color:#f92672">.</span>respond_to?(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">talk</span><span style="color:#e6db74">&#34;</span>)
+   obj<span style="color:#f92672">.</span>talk
+<span style="color:#66d9ef">else</span>
+   puts <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Sorry, object can&#39;t talk!</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#75715e"># 若找不到talk，也不會跳出undefined method &#39;talk&#39; for #&lt;Object:0x12345678&gt; (NoMethodError)的錯誤</span>
+</code></pre></div><p>若想看更多請參考<a href="http://galeki.is-programmer.com/posts/183.html">這裡</a>。</p>
+<p>另外補充， <code>respond_to</code> 是Rails 控制器的用法，和 respond_to? 完全是不一樣的意思</p>
+<p><code>respond_to</code> is a <a href="http://apidock.com/rails/ActionController/MimeResponds/respond_to"><strong>Rails</strong> method</a> for responding to particular request types. For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">index</span>
+  @people <span style="color:#f92672">=</span> <span style="color:#66d9ef">Person</span><span style="color:#f92672">.</span>find(<span style="color:#e6db74">:all</span>)
+
+  respond_to <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>format<span style="color:#f92672">|</span>
+    format<span style="color:#f92672">.</span>html
+    format<span style="color:#f92672">.</span>xml { render <span style="color:#e6db74">:xml</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> @people<span style="color:#f92672">.</span>to_xml }
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div></li>
+<li>
+<p>簡單介紹 <code>to_query</code> 的用法</p>
+<p>input: {a:6,b:7}.to_query
+output: &ldquo;a=6&amp;b=7&rdquo;</p>
+</li>
+<li>
+<p>以下介紹在Rails常常使用的一靴方法，目前已使用過<code>constantize</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">cat/my_book</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>camelize <span style="color:#75715e"># =&gt; &#34;Cat::MyBook&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Cat::MyBook</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>underscore <span style="color:#75715e"># =&gt; &#34;cat/my_book&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">cat/my_book</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>dasherize <span style="color:#75715e"># =&gt; &#34;cat/my-book&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">book</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>pluralize            <span style="color:#75715e"># =&gt; &#34;books&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">person</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>pluralize          <span style="color:#75715e"># =&gt; &#34;people&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">fish</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>pluralize            <span style="color:#75715e"># =&gt; &#34;fish&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">books</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>singularize            <span style="color:#75715e"># =&gt; &#34;book&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">people</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>singularize           <span style="color:#75715e"># =&gt; &#34;person&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">book_and_person</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>pluralize <span style="color:#75715e"># =&gt; &#34;book_and_people&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">book and person</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>pluralize <span style="color:#75715e"># =&gt; &#34;book and people&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">BookAndPerson</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>pluralize   <span style="color:#75715e"># =&gt; &#34;BookAndPeople&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">books_and_people</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>singularize <span style="color:#75715e"># =&gt; &#34;books_and_person&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">books and people</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>singularize <span style="color:#75715e"># =&gt; &#34;books and person&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">BooksAndPeople</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>singularize   <span style="color:#75715e"># =&gt; &#34;BooksAndPerson&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">cat/my_books</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>humanize <span style="color:#75715e"># =&gt; &#34;Cat/My books&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">cat/my_books</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>titleize <span style="color:#75715e"># =&gt; &#34;Cat/My Books&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">cat/my_book</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>classify  <span style="color:#75715e"># =&gt; &#34;Cat::MyBook&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">cat/my_books</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>classify <span style="color:#75715e"># =&gt; &#34;Cat::MyBook&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">cat/my_book</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>tableize <span style="color:#75715e"># =&gt; &#34;cat/my_books&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Cat::MyBook</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>tableize  <span style="color:#75715e"># =&gt; &#34;cat/my_books&#34;</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Module</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>constantize     <span style="color:#75715e"># =&gt; Module</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">A::b::C</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>deconstantize <span style="color:#75715e"># &gt;&gt; A::B</span>
+   <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">A::b::C</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>demodulize <span style="color:#75715e"># &gt;&gt; C</span>
+</code></pre></div></li>
+<li>
+<p>在工作期間，主管告訴我兩種寫法的差別。當程式進入到@currency，若@currency賦值變直接跳出，因此寫法2比起寫法1省了很多效能。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># 寫法1</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">currency</span>(currency, option <span style="color:#f92672">=</span> {})
+  currency <span style="color:#f92672">=</span> option<span style="color:#f92672">&amp;</span><span style="color:#f92672">.</span>dig(currency) <span style="color:#f92672">||</span> currency
+  @currency <span style="color:#f92672">||</span><span style="color:#f92672">=</span> currency
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#75715e"># 寫法2</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">currency</span>(currency, option <span style="color:#f92672">=</span> {})
+  @currency <span style="color:#f92672">||</span><span style="color:#f92672">=</span> option<span style="color:#f92672">&amp;</span><span style="color:#f92672">.</span>dig(currency) <span style="color:#f92672">||</span> currency
+<span style="color:#66d9ef">end</span>
+</code></pre></div></li>
+<li>
+<p>在ensure底下如果要回傳值，一定要寫return，而且最好不要在ensure寫回傳值</p>
+</li>
+<li>
+<p>__method__使用方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">foo</span>
+    puts <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">A</span><span style="color:#e6db74">#</span><span style="color:#e6db74">foo: `I am </span><span style="color:#e6db74">#{</span>method(__method__)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">&lt;</span> A
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">foo</span>
+    puts <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">B</span><span style="color:#e6db74">#</span><span style="color:#e6db74">foo: `I am </span><span style="color:#e6db74">#{</span>method(__method__)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#66d9ef">super</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+A<span style="color:#f92672">.</span>new<span style="color:#f92672">.</span>foo <span style="color:#75715e"># A#foo: `I am #&lt;Method: A#foo&gt;&#39;</span>
+B<span style="color:#f92672">.</span>new<span style="color:#f92672">.</span>foo <span style="color:#75715e"># B#foo: `I am #&lt;Method: B#foo&gt;&#39;</span>
+
+<span style="color:#75715e"># B#foo: `I am #&lt;Method: B#foo&gt;&#39;</span>
+<span style="color:#75715e"># A#foo: `I am #&lt;Method: A#foo&gt;&#39; # &lt;- this is what I want</span>
+</code></pre></div></li>
+<li>
+<p>Ruby idioms(慣例) : The splat operator</p>
+<ul>
+<li>The <code>*</code> is called the &ldquo;splat operator&rdquo;; I'm not sure I could give you the technical definition (though I'm sure you'd find it soon enough with Google's help), but the way I'd describe it is that it basically takes the place of hand-writing multiple comma-separated values in code.</li>
+<li>splat operator可以把array展開</li>
+<li>first, *rest, last  = [&ldquo;a&rdquo;, &ldquo;b&rdquo;, &ldquo;c&rdquo;, &ldquo;d&rdquo;]  =&gt; first: &ldquo;a&rdquo;, rest: [&ldquo;b&rdquo;, &ldquo;c&rdquo;], last: &ldquo;d&rdquo;</li>
+</ul>
+<p>The double splat operator came out back in Ruby 2.0. It’s pretty similar to the original splat with one difference: it can be used for hashes. <a href="https://ithelp.ithome.com.tw/articles/10206862">Here</a> is the reference.</p>
+</li>
+<li>
+<p>%w quotes like single quotes <code>''</code> (no variable interpolation, fewer escape sequences), while %W quotes like double quotes <code>&quot;&quot;</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">irb(main):<span style="color:#ae81ff">001</span><span style="color:#f92672"></span>:<span style="color:#ae81ff">0</span><span style="color:#f92672"></span><span style="color:#f92672">&gt;</span> foo<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hello</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hello</span><span style="color:#e6db74">&#34;</span>
+irb(main):<span style="color:#ae81ff">002</span><span style="color:#f92672"></span>:<span style="color:#ae81ff">0</span><span style="color:#f92672"></span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">%W(</span><span style="color:#e6db74">foo bar baz </span><span style="color:#e6db74">#{</span>foo<span style="color:#e6db74">}</span><span style="color:#e6db74">)</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">foo</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">bar</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">baz</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hello</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+irb(main):<span style="color:#ae81ff">003</span><span style="color:#f92672"></span>:<span style="color:#ae81ff">0</span><span style="color:#f92672"></span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">%w(</span><span style="color:#e6db74">foo bar baz </span><span style="color:#e6db74">#</span><span style="color:#e6db74">{foo}</span><span style="color:#e6db74">)</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">foo</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">bar</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">baz</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\#</span><span style="color:#e6db74">{foo}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+</code></pre></div></li>
+<li>
+<p>URI.parse：<a href="https://apidock.com/ruby/String">String</a> with <a href="https://apidock.com/ruby/URI">URI</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">URI</span><span style="color:#f92672">::</span>parse(uri_str)
+</code></pre></div></li>
+<li>
+<p>.to_boolean</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>to_boolean
+<span style="color:#66d9ef">false</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">fa</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>to_boolean
+<span style="color:#66d9ef">true</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">fal</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>to_boolean
+<span style="color:#66d9ef">true</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">fals</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>to_boolean
+<span style="color:#66d9ef">true</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">false</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>to_boolean
+<span style="color:#66d9ef">false</span>
+</code></pre></div></li>
+<li>
+<p>args</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">print_all</span>(<span style="color:#f92672">*</span>args)
+  args<span style="color:#f92672">.</span>second
+<span style="color:#66d9ef">end</span>
+
+print_all(<span style="color:#ae81ff">1</span><span style="color:#f92672"></span>, <span style="color:#ae81ff">2</span><span style="color:#f92672"></span>, <span style="color:#ae81ff">3</span><span style="color:#f92672"></span>, <span style="color:#ae81ff">4</span><span style="color:#f92672"></span>, <span style="color:#ae81ff">5</span><span style="color:#f92672"></span>)
+</code></pre></div></li>
+<li>
+<p>若 ruby 沒有設定任何回傳值，預設為回傳 true</p>
+</li>
+<li>
+<p>.try() 與 &amp;.，愛用就回不去了，更多參考資料請看<a href="http://mitrev.net/ruby/2015/11/13/the-operator-in-ruby/">這裡</a></p>
+</li>
+<li>
+<p>Turn a new line(\n) into a &lt;\br&gt; tag with Ruby. Please watch <a href="https://coderwall.com/p/nbzpta/turn-a-new-line-n-into-a-br-tag-with-ruby">Here</a>.</p>
+</li>
+<li>
+<p><code>to_sym</code> 為轉符號的意思，更多參考資料<a href="https://apidock.com/ruby/String/to_sym">請看</a></p>
+</li>
+<li>
+<p>Ruby 數字格式請參考<a href="https://idiosyncratic-ruby.com/49-what-the-format.html">這裡</a></p>
+</li>
+</ol>
+<h4 id="variable">Variable</h4>
+<p>首先是Ruby語法變數的部分，<a href="https://ithelp.ithome.com.tw/articles/10158912">Rails新手常搞混的變數</a>介紹了新手常常搞混的變數，像是區域變數、實體變數、常數變數等等。<a href="%5Bhttps://pjchender.github.io/2017/09/26/ruby-%E8%AE%8A%E6%95%B8%EF%BC%88variable%EF%BC%89%E8%88%87%E5%B8%B8%E6%95%B8%EF%BC%88constant%EF%BC%89/%5D(https://pjchender.github.io/2017/09/26/ruby-%E8%AE%8A%E6%95%B8%EF%BC%88variable%EF%BC%89%E8%88%87%E5%B8%B8%E6%95%B8%EF%BC%88constant%EF%BC%89/)">PJCHENder 私房菜</a> 進一步告訴讀者如何使用Ruby變數</p>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>範例</th>
+<th>預設值</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>區域變數 （local Variable）</td>
+<td>name</td>
+<td>沒有</td>
+<td>被定義在 method 裡面的變數，它們沒辦法在該 method 外被使用。</td>
+</tr>
+<tr>
+<td>實例變數 （instance Variable）</td>
+<td>@name</td>
+<td>nil</td>
+<td>可以視為 class 的屬性（attribute），並會成為物件中的屬性（property）。它可以在該 class 中被存取，因此可以被 class 中的其他 method 使用。它也可以在特定的 object 中被使用，每一個物件的屬性會各別賦值，不會和其他的物件共享，它會隨著不同的物件而有不同的值。</td>
+</tr>
+<tr>
+<td>類別變數（class Variable）</td>
+<td>@@name</td>
+<td>沒有</td>
+<td>在同一個 class 所建立的實例物件中都可以存用，但沒辦法在不同的 class 中被取用。</td>
+</tr>
+<tr>
+<td>全域變數（global Variable）</td>
+<td>$name</td>
+<td>nil</td>
+<td>可以在不同的 class 中被取用。</td>
+</tr>
+</tbody>
+</table>
+<p>再來介紹 Ruby 中 Heap 和 Stack 的不同。這是變數的儲存方式，Stack 是區域變數的儲存方式，而 Heap 為實體變數、類別變數存取的方式。在某些情況下，實體變數會遇到的狀況跟他存放位置有關，以下小知識需要了解一下。</p>
+<ul>
+<li>
+<p>Stack: 區域變數使用堆積的方式存取運算符、方法、變數的運算，所以不會有 Race Condition</p>
+</li>
+<li>
+<p>Heap: 實體變數、類別變數存取的方式，因為Ruby的類別或實體共用這些變數，所以有機率發生 Race Condition。除此之外，它們會在 Heap 隨機存取一個記憶體位置，可能會出現效能問題</p>
+</li>
+</ul>
+<h4 id="class">Class</h4>
+<ol>
+<li>
+<p>Ruby &ldquo;<a href="https://www.rubyguides.com/2019/01/ruby-initialize-method/">initialize</a>&rdquo; method</p>
+</li>
+<li>
+<p>How to Use <a href="https://www.rubyguides.com/2018/11/attr_accessor/">attr_accessor, attr_writer &amp; attr_reader</a></p>
+</li>
+<li>
+<p>類別方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">IronmanList</span>
+  <span style="color:#66d9ef">class</span> <span style="color:#f92672">&lt;&lt;</span> self
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">find</span>(id)
+      <span style="color:#f92672">...</span>
+    <span style="color:#66d9ef">end</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">IronmanList</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">find</span>(id)
+    <span style="color:#f92672">...</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div></li>
+<li>
+<p>check_method = game_object.class.method(:CheckState)</p>
+<p>這句話的意思是，呼叫game_object實體類別的方法，呼叫的方法為CheckState</p>
+</li>
+<li>
+<p>module 不能被直接取用，只有類別方法才可以。舉下列例子說明：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">module</span> Helper
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">print_map</span>
+    puts <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello!!!</span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">if</span> <span style="color:#66d9ef">Helper</span><span style="color:#f92672">.</span>respond_to?(<span style="color:#e6db74">&#39;print_map&#39;</span>)
+  <span style="color:#66d9ef">Helper</span><span style="color:#f92672">.</span>print_map
+<span style="color:#66d9ef">else</span>
+  puts(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">METHOD isn&#39;t exist</span><span style="color:#e6db74">&#34;</span>)
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#75715e"># =&gt; METHOD isn&#39;t exist</span>
+</code></pre></div></li>
+<li>
+<p>使用<code>self.[]</code>用法，可以自己定義<code>[]</code>運算子</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyClass</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">.</span><span style="color:#a6e22e">[]</span>(arg)
+    <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hello </span><span style="color:#e6db74">#{</span>arg<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">end</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">[]</span>(arg)
+    <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hi </span><span style="color:#e6db74">#{</span>arg<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+puts <span style="color:#66d9ef">MyClass</span><span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+puts <span style="color:#66d9ef">MyClass</span><span style="color:#f92672">.</span>new<span style="color:#f92672">[</span><span style="color:#ae81ff">3</span><span style="color:#f92672"></span><span style="color:#f92672">]</span>
+</code></pre></div></li>
+<li>
+<p>Class裡頭有沒有定義常數，請使用 self.class::const_defined?(:&lt;常數&gt;)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">get_sty_flow</span>(sty_opt)
+  <span style="color:#66d9ef">return</span> sty_opt<span style="color:#f92672">[</span><span style="color:#e6db74">:strategy</span><span style="color:#f92672">]</span> <span style="color:#66d9ef">if</span> sty_opt<span style="color:#f92672">[</span><span style="color:#e6db74">:strategy</span><span style="color:#f92672">]</span><span style="color:#f92672">.</span>present?
+  <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>class<span style="color:#f92672">::</span><span style="color:#66d9ef">STRATEGY</span> <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>class<span style="color:#f92672">::</span>const_defined?(<span style="color:#e6db74">:STRATEGY</span>)
+  <span style="color:#66d9ef">DEFAULT_STRATEGY</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div></li>
+<li>
+<p>如果要require，class要改成module，這邊有<a href="https://stackoverflow.com/questions/47119729/rails-loading-custom-class-from-lib-folder-in-controller/47119932">參考資料</a></p>
+</li>
+<li>
+<p>Ruby的self物件與singleton method，請參考<a href="https://ithelp.ithome.com.tw/articles/10200398">學姊</a>的文章</p>
+</li>
+<li>
+<p>簡單介紹 <code>instance_variable_get</code> 以及<code>instance_variable_set </code>的使用方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Fred</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">initialize</span>(p1, p2)
+    @a, @b <span style="color:#f92672">=</span> p1, p2
+  <span style="color:#66d9ef">end</span>
+
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">find</span>
+    puts instance_variable_get(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">@a</span><span style="color:#e6db74">&#34;</span>)
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+fred <span style="color:#f92672">=</span> <span style="color:#66d9ef">Fred</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#39;cat&#39;</span>, <span style="color:#ae81ff">99</span><span style="color:#f92672"></span>)
+puts fred<span style="color:#f92672">.</span>instance_variable_get(<span style="color:#e6db74">:@a</span>)    <span style="color:#75715e">#=&gt; &#34;cat&#34;</span>
+puts fred<span style="color:#f92672">.</span>instance_variable_get(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">@b</span><span style="color:#e6db74">&#34;</span>)   <span style="color:#75715e">#=&gt; 99</span>
+fred<span style="color:#f92672">.</span>find
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Fred</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">initialize</span>(p1, p2)
+    @a, @b <span style="color:#f92672">=</span> p1, p2
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+fred <span style="color:#f92672">=</span> <span style="color:#66d9ef">Fred</span><span style="color:#f92672">.</span>new(<span style="color:#e6db74">&#39;cat&#39;</span>, <span style="color:#ae81ff">99</span><span style="color:#f92672"></span>)
+fred<span style="color:#f92672">.</span>instance_variable_set(<span style="color:#e6db74">:@a</span>, <span style="color:#e6db74">&#39;dog&#39;</span>)   <span style="color:#75715e">#=&gt; &#34;dog&#34;</span>
+fred<span style="color:#f92672">.</span>instance_variable_set(<span style="color:#e6db74">:@c</span>, <span style="color:#e6db74">&#39;cat&#39;</span>)   <span style="color:#75715e">#=&gt; &#34;cat&#34;</span>
+fred<span style="color:#f92672">.</span>inspect                             <span style="color:#75715e">#=&gt; &#34;#&lt;Fred:0x401b3da8 @a=\&#34;dog\&#34;, @b=99, @c=\&#34;cat\&#34;&gt;&#34;</span>
+</code></pre></div></li>
+</ol>
+<h4 id="string">String</h4>
+<ol>
+<li>split <a href="https://apidock.com/ruby/String/split">用法</a></li>
+<li>不管是哪邊都很重要的<a href="https://larry850806.github.io/2016/06/23/regex/">正規表達式</a></li>
+</ol>
+<h4 id="array">Array</h4>
+<ol>
+<li>
+<p>陣列用法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e">## 陣列疊代</span>
+Array<span style="color:#f92672">.</span>each{<span style="color:#f92672">|</span>element<span style="color:#f92672">|</span>}
+Array<span style="color:#f92672">.</span>collect{<span style="color:#f92672">|</span>element<span style="color:#f92672">|</span>}
+Array<span style="color:#f92672">.</span>map{<span style="color:#f92672">|</span>element<span style="color:#f92672">|</span>}
+Array<span style="color:#f92672">.</span>select{<span style="color:#f92672">|</span>element<span style="color:#f92672">|</span>}    <span style="color:#75715e"># 選出回傳為 true 的 element</span>
+Array<span style="color:#f92672">.</span>reject{<span style="color:#f92672">|</span>element<span style="color:#f92672">|</span>}    <span style="color:#75715e"># 刪掉回傳為 true 的 element</span>
+Array<span style="color:#f92672">.</span>each<span style="color:#f92672">.</span>with_index{<span style="color:#f92672">|</span>element, index<span style="color:#f92672">|</span>}
+Array<span style="color:#f92672">.</span>all?{<span style="color:#f92672">|</span>element<span style="color:#f92672">|</span>}      <span style="color:#75715e"># 如果陣列裡面沒東西也會回傳 true</span>
+Array<span style="color:#f92672">.</span>any?{<span style="color:#f92672">|</span>element<span style="color:#f92672">|</span>}
+
+<span style="color:#75715e">## 陣列取用</span>
+Array<span style="color:#f92672">.</span>slice(<span style="color:#f92672">[</span>start<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>length<span style="color:#f92672">]</span>)
+
+<span style="color:#75715e">## 添加元素</span>
+Array<span style="color:#f92672">.</span>push(<span style="color:#f92672">[</span>element<span style="color:#f92672">]</span>)
+Array<span style="color:#f92672">.</span>insert(<span style="color:#f92672">[</span>index<span style="color:#f92672">]</span>, <span style="color:#f92672">[</span>element<span style="color:#f92672">]</span>)
+Array<span style="color:#f92672">.</span>unshift(<span style="color:#f92672">[</span>element<span style="color:#f92672">]</span>)  <span style="color:#75715e"># 添加在最前面</span>
+
+<span style="color:#75715e">## 其他</span>
+Array<span style="color:#f92672">.</span>flatten      <span style="color:#75715e"># 拆成一維陣列</span>
+Array<span style="color:#f92672">.</span>uniq         <span style="color:#75715e"># 移除陣列中相同的值</span>
+<span style="color:#f92672">[</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#39;A&#39;</span><span style="color:#f92672">..</span><span style="color:#e6db74">&#39;Z&#39;</span><span style="color:#f92672">]</span>        <span style="color:#75715e"># 產生 A...Z 的陣列</span>
+foo, bar <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span><span style="color:#f92672">]</span>  <span style="color:#75715e"># 陣列的解構賦值</span>
+</code></pre></div></li>
+<li>
+<p>flat_map的<a href="https://apidock.com/ruby/Enumerable/flat_map">使用方式</a></p>
+<p>輸入：[false,true].flat_map {|i| i }</p>
+<p>輸出：[
+[0] false,
+[1] true
+]</p>
+</li>
+<li>
+<p>Ruby Arrays: Insert, Append, Length, Index, Remove，更多請參考<a href="https://gistpages.com/posts/ruby_arrays_insert_append_length_index_remove">這裡</a></p>
+</li>
+</ol>
+<h4 id="hash">Hash</h4>
+<ol>
+<li>
+<p>hash的基本用法：https://docs.ruby-lang.org/en/2.0.0/Hash.html</p>
+</li>
+<li>
+<p>_options = {} : 為rails中的慣例。rails中，有些方法必須要丟相應的參數，但那些參數卻用不到。
+參考資料：https://stackoverflow.com/questions/18407618/what-are-options-hashes</p>
+</li>
+<li>
+<p>dig (適用於Array|Hash)，更多請<a href="https://ruby-china.org/topics/32080">參考</a>。以下為使用 dig() 來取用 hash 的範例</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">hash <span style="color:#f92672">=</span> {
+    <span style="color:#e6db74">image</span>: {
+      <span style="color:#e6db74">&#39;1x&#39;</span>: <span style="color:#e6db74">&#39;v6/customer_brands/openstack.png&#39;</span>,
+      <span style="color:#e6db74">&#39;2x&#39;</span>: <span style="color:#e6db74">&#39;v6/customer_brands/openstack@2x.png&#39;</span>
+    }
+  }
+
+hash<span style="color:#f92672">.</span>dig(<span style="color:#e6db74">:image</span>, <span style="color:#e6db74">:&#39;1x&#39;</span>)         <span style="color:#75715e"># &#39;v6/customer_brands/openstack.png&#39;,</span>
+hash<span style="color:#f92672">.</span>dig(<span style="color:#e6db74">:image</span>, <span style="color:#e6db74">:foo</span>, <span style="color:#e6db74">:bar</span>)    <span style="color:#75715e"># nil</span>
+
+hash<span style="color:#f92672">[</span><span style="color:#e6db74">:image</span><span style="color:#f92672">]</span><span style="color:#f92672">[</span><span style="color:#e6db74">:&#39;1x&#39;</span><span style="color:#f92672">]</span>             <span style="color:#75715e"># &#34;v6/customer_brands/openstack.png&#34;</span>
+hash<span style="color:#f92672">[</span><span style="color:#e6db74">:image</span><span style="color:#f92672">]</span><span style="color:#f92672">[</span><span style="color:#e6db74">:&#39;foo&#39;</span><span style="color:#f92672">]</span><span style="color:#f92672">[</span><span style="color:#e6db74">:&#39;bar&#39;</span><span style="color:#f92672">]</span>    <span style="color:#75715e"># undefined method `[]&#39; for nil:NilClass</span>
+</code></pre></div></li>
+<li>
+<p>hash跟array可以直接指派值進去，舉例來說：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;</span> a <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#f92672">]</span>; a<span style="color:#f92672">[</span><span style="color:#ae81ff">5</span><span style="color:#f92672"></span><span style="color:#f92672">]</span><span style="color:#f92672">=</span><span style="color:#ae81ff">20</span><span style="color:#f92672"></span>;
+<span style="color:#f92672">&gt;</span> a
+<span style="color:#f92672">[</span>
+    <span style="color:#f92672">[</span><span style="color:#ae81ff">0</span><span style="color:#f92672"></span><span style="color:#f92672">]</span> <span style="color:#66d9ef">nil</span>,
+    <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#f92672">]</span> <span style="color:#66d9ef">nil</span>,
+    <span style="color:#f92672">[</span><span style="color:#ae81ff">2</span><span style="color:#f92672"></span><span style="color:#f92672">]</span> <span style="color:#66d9ef">nil</span>,
+    <span style="color:#f92672">[</span><span style="color:#ae81ff">3</span><span style="color:#f92672"></span><span style="color:#f92672">]</span> <span style="color:#66d9ef">nil</span>,
+    <span style="color:#f92672">[</span><span style="color:#ae81ff">4</span><span style="color:#f92672"></span><span style="color:#f92672">]</span> <span style="color:#66d9ef">nil</span>,
+    <span style="color:#f92672">[</span><span style="color:#ae81ff">5</span><span style="color:#f92672"></span><span style="color:#f92672">]</span> <span style="color:#ae81ff">20</span>
+<span style="color:#f92672"></span><span style="color:#f92672">]</span>
+</code></pre></div></li>
+<li>
+<p>有了 Hash.new { |h, k| h[k] = Hash.new(&amp;h.default_proc) }，就可以任意宣告 hash</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">a <span style="color:#f92672">=</span> <span style="color:#66d9ef">Hash</span><span style="color:#f92672">.</span>new { <span style="color:#f92672">|</span>h, k<span style="color:#f92672">|</span> h<span style="color:#f92672">[</span>k<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Hash</span><span style="color:#f92672">.</span>new(<span style="color:#f92672">&amp;</span>h<span style="color:#f92672">.</span>default_proc) }
+a<span style="color:#f92672">[</span><span style="color:#e6db74">:a</span><span style="color:#f92672">]</span><span style="color:#f92672">[</span><span style="color:#e6db74">:b</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;chenhanting&#39;</span> <span style="color:#75715e"># 不會產生錯誤</span>
+
+a <span style="color:#f92672">=</span> {}
+a<span style="color:#f92672">[</span><span style="color:#e6db74">:a</span><span style="color:#f92672">]</span><span style="color:#f92672">[</span><span style="color:#e6db74">:b</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;chenhanting&#39;</span> <span style="color:#75715e"># 會產生錯誤</span>
+</code></pre></div></li>
+<li>
+<p>Hashes have a thing called a <a href="http://www.ruby-doc.org/core-2.0.0/Hash.html#method-i-default_proc"><code>default_proc</code></a>, which is simply a proc that Ruby runs when you try to access a hash key that doesn't exist. This proc receives both the hash itself and the target key as parameters.</p>
+<p>You can set a Hash's <code>default_proc</code> at any time. Passing a block parameter to <code>Hash.new</code> simply allows you to initialize a Hash and set its <code>default_proc</code> in one step:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">h <span style="color:#f92672">=</span> <span style="color:#66d9ef">Hash</span><span style="color:#f92672">.</span>new
+h<span style="color:#f92672">.</span>default_proc <span style="color:#f92672">=</span> proc{ <span style="color:#f92672">|</span>hash, key<span style="color:#f92672">|</span> hash<span style="color:#f92672">[</span>key<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;foo&#39;</span> }
+
+<span style="color:#75715e"># The above is equivalent to:</span>
+
+h <span style="color:#f92672">=</span> <span style="color:#66d9ef">Hash</span><span style="color:#f92672">.</span>new{ <span style="color:#f92672">|</span>hash, key<span style="color:#f92672">|</span> hash<span style="color:#f92672">[</span>key<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;foo&#39;</span> }
+</code></pre></div><p>We can also access the default proc for a hash by calling <code>h.default_proc</code>. Knowing this, and knowing that the ampersand (<code>&amp;</code>) allows a proc passed as a normal parameter to be treated as a block parameter, we can now explain how this code works:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">cool_hash <span style="color:#f92672">=</span> <span style="color:#66d9ef">Hash</span><span style="color:#f92672">.</span>new{ <span style="color:#f92672">|</span>h, k<span style="color:#f92672">|</span> h<span style="color:#f92672">[</span>k<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Hash</span><span style="color:#f92672">.</span>new(<span style="color:#f92672">&amp;</span>h<span style="color:#f92672">.</span>default_proc) }
+</code></pre></div><p>The block passed to <code>Hash.new</code> will be called when we try to access a key that doesn't exist. This block will receive the hash itself as <code>h</code>, and the key we tried to access as <code>k</code>. We respond by setting <code>h[k]</code> (that is, the value of the key we're trying to access) to a new hash. Into the constructor of this new hash, we pass the &ldquo;parent&rdquo; hash's <code>default_proc</code>, using an ampersand to force it to be interpreted as a block parameter. This is the equivalent of doing the following, to an infinite depth:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">cool_hash <span style="color:#f92672">=</span> <span style="color:#66d9ef">Hash</span><span style="color:#f92672">.</span>new{ <span style="color:#f92672">|</span>h, k<span style="color:#f92672">|</span> h<span style="color:#f92672">[</span>k<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Hash</span><span style="color:#f92672">.</span>new{ <span style="color:#f92672">|</span>h, k<span style="color:#f92672">|</span> h<span style="color:#f92672">[</span>k<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Hash</span><span style="color:#f92672">.</span>new{ <span style="color:#f92672">...</span> } } }
+</code></pre></div><p>The end result is that the key we tried to access was initialized to a new Hash, which itself will initialize any &ldquo;not found&rdquo; keys to a new Hash, which itself will have the same behavior, etc.</p>
+</li>
+<li>
+<p>重要！如何使用 <a href="https://apidock.com/ruby/Hash/fetch">fetch</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">h <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">100</span><span style="color:#f92672"></span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">200</span> <span style="color:#f92672"></span>}
+h<span style="color:#f92672">.</span>fetch(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#34;</span>)                            <span style="color:#75715e">#=&gt; 100</span>
+h<span style="color:#f92672">.</span>fetch(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">z</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">go fish</span><span style="color:#e6db74">&#34;</span>)                 <span style="color:#75715e">#=&gt; &#34;go fish&#34;</span>
+h<span style="color:#f92672">.</span>fetch(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">z</span><span style="color:#e6db74">&#34;</span>) { <span style="color:#f92672">|</span>el<span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">go fish, </span><span style="color:#e6db74">#{</span>el<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>}   <span style="color:#75715e">#=&gt; &#34;go fish, z&#34;</span>
+
+h <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">100</span><span style="color:#f92672"></span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">200</span> <span style="color:#f92672"></span>}
+h<span style="color:#f92672">.</span>fetch(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">z</span><span style="color:#e6db74">&#34;</span>) <span style="color:#75715e"># =&gt; prog.rb:2:in `fetch&#39;: key not found (KeyError)</span>
+</code></pre></div></li>
+<li>
+<p>重要！如何使用 merge</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">h1 <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">100</span><span style="color:#f92672"></span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">200</span> <span style="color:#f92672"></span>}
+h2 <span style="color:#f92672">=</span> { <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">254</span><span style="color:#f92672"></span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">c</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">300</span> <span style="color:#f92672"></span>}
+h1<span style="color:#f92672">.</span>merge(h2)   <span style="color:#75715e">#=&gt; {&#34;a&#34;=&gt;100, &#34;b&#34;=&gt;254, &#34;c&#34;=&gt;300}</span>
+h1<span style="color:#f92672">.</span>merge(h2){<span style="color:#f92672">|</span>key, oldval, newval<span style="color:#f92672">|</span> newval <span style="color:#f92672">-</span> oldval}
+               <span style="color:#75715e">#=&gt; {&#34;a&#34;=&gt;100, &#34;b&#34;=&gt;54,  &#34;c&#34;=&gt;300}</span>
+h1             <span style="color:#75715e">#=&gt; {&#34;a&#34;=&gt;100, &#34;b&#34;=&gt;200}</span>
+</code></pre></div></li>
+<li>
+<p><a href="https://stackoverflow.com/questions/5212380/is-there-an-each-if-in-ruby">each_if</a> in ruby</p>
+</li>
+<li>
+<p>如何使用 slice?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">   <span style="color:#f92672">&gt;</span> { <span style="color:#e6db74">a</span>: <span style="color:#ae81ff">1</span><span style="color:#f92672"></span>, <span style="color:#e6db74">b</span>: <span style="color:#ae81ff">2</span><span style="color:#f92672"></span>, <span style="color:#e6db74">c</span>: <span style="color:#ae81ff">3</span><span style="color:#f92672"></span>, <span style="color:#e6db74">d</span>: <span style="color:#ae81ff">4</span> <span style="color:#f92672"></span>}<span style="color:#f92672">.</span>slice(<span style="color:#e6db74">:a</span>, <span style="color:#e6db74">:b</span>)
+   {
+       <span style="color:#e6db74">:a</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span><span style="color:#f92672"></span>,
+       <span style="color:#e6db74">:b</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>
+   <span style="color:#f92672"></span>}
+</code></pre></div></li>
+</ol>
+<h4 id="block">Block</h4>
+<ol>
+<li>
+<p>首先先介紹 <code>each_with_object</code> 的用法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">%w(</span><span style="color:#e6db74">foo bar</span><span style="color:#e6db74">)</span><span style="color:#f92672">.</span>each_with_object({}) { <span style="color:#f92672">|</span>str, hsh<span style="color:#f92672">|</span> hsh<span style="color:#f92672">[</span>str<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> str<span style="color:#f92672">.</span>upcase }
+{
+    <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">foo</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">FOO</span><span style="color:#e6db74">&#34;</span>,
+    <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">bar</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">BAR</span><span style="color:#e6db74">&#34;</span>
+}
+</code></pre></div><p>以 Evan 要 mapping 花色來說</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">mapping <span style="color:#f92672">=</span> {
+  <span style="color:#ae81ff">0</span> <span style="color:#f92672"></span><span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;♠&#39;</span>,
+  <span style="color:#ae81ff">1</span> <span style="color:#f92672"></span><span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;♥&#39;</span>,
+  <span style="color:#ae81ff">2</span> <span style="color:#f92672"></span><span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;♣&#39;</span>,
+  <span style="color:#ae81ff">3</span> <span style="color:#f92672"></span><span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;♦&#39;</span>,
+}
+
+(<span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#f92672">..</span><span style="color:#ae81ff">52</span><span style="color:#f92672"></span>)<span style="color:#f92672">.</span>to_a<span style="color:#f92672">.</span>each_with_object({}) <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>number, hsh<span style="color:#f92672">|</span>
+  a <span style="color:#f92672">=</span> number <span style="color:#f92672">/</span> <span style="color:#ae81ff">13</span>
+  <span style="color:#f92672"></span>b <span style="color:#f92672">=</span> number <span style="color:#f92672">%</span> <span style="color:#ae81ff">13</span>
+  <span style="color:#f92672"></span><span style="color:#66d9ef">if</span> b<span style="color:#f92672">.</span>zero?
+    a <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#f92672"></span>b <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span>
+  <span style="color:#f92672"></span><span style="color:#66d9ef">end</span>
+  <span style="color:#66d9ef">case</span> b
+  <span style="color:#66d9ef">when</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672"></span><span style="color:#66d9ef">then</span> b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">A</span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">when</span> <span style="color:#ae81ff">11</span> <span style="color:#f92672"></span><span style="color:#66d9ef">then</span> b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">J</span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">when</span> <span style="color:#ae81ff">12</span> <span style="color:#f92672"></span><span style="color:#66d9ef">then</span> b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Q</span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">when</span> <span style="color:#ae81ff">13</span> <span style="color:#f92672"></span><span style="color:#66d9ef">then</span> b <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">K</span><span style="color:#e6db74">&#34;</span>
+  <span style="color:#66d9ef">else</span> b
+  <span style="color:#66d9ef">end</span>
+  hsh<span style="color:#f92672">[</span>number<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#{</span>mapping<span style="color:#f92672">[</span>a<span style="color:#f92672">]</span><span style="color:#e6db74">}</span><span style="color:#e6db74">#{</span>b<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">end</span>
+
+</code></pre></div></li>
+<li>
+<p><a href="https://www.rubyguides.com/2018/10/ruby-map-method/">map</a>用法</p>
+</li>
+<li>
+<p>Proc <a href="https://railsbook.tw/chapters/07-ruby-basic-3.html">如何</a>將 Block 物件化</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">say_hello_to <span style="color:#f92672">=</span> <span style="color:#66d9ef">Proc</span><span style="color:#f92672">.</span>new { <span style="color:#f92672">|</span>name<span style="color:#f92672">|</span> puts <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">你好，</span><span style="color:#e6db74">#{</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>}
+
+say_hello_to<span style="color:#f92672">.</span>call(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">尼特羅會長</span><span style="color:#e6db74">&#34;</span>)    <span style="color:#75715e"># 使用 call 方法</span>
+say_hello_to<span style="color:#f92672">.</span>(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">尼特羅會長</span><span style="color:#e6db74">&#34;</span>)        <span style="color:#75715e"># 使用小括號（注意，有多一個小數點）</span>
+say_hello_to<span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">尼特羅會長</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>         <span style="color:#75715e"># 使用中括號</span>
+say_hello_to <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">尼特羅會長</span><span style="color:#e6db74">&#34;</span>      <span style="color:#75715e"># 使用三個等號</span>
+say_hello_to<span style="color:#f92672">.</span>yield <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">尼特羅會長</span><span style="color:#e6db74">&#34;</span>    <span style="color:#75715e"># 使用 yield 方法</span>
+
+<span style="color:#75715e"># 這幾種方式都可以呼叫 Proc 物件</span>
+</code></pre></div></li>
+<li>
+<p>什麼是block_given?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">f2</span>(n, <span style="color:#f92672">&amp;</span>p)
+  <span style="color:#66d9ef">if</span> block_given?
+    p<span style="color:#f92672">[</span>n<span style="color:#f92672">]</span> <span style="color:#75715e"># call proc p</span>
+    <span style="color:#75715e"># &#39;p[n]&#39; can be alternated with &#39;p.call(n)&#39;</span>
+    <span style="color:#75715e"># &#39;yield n&#39; also works</span>
+  <span style="color:#66d9ef">else</span>
+    puts <span style="color:#e6db74">&#39;no block&#39;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+f2(<span style="color:#ae81ff">2</span><span style="color:#f92672"></span>){<span style="color:#f92672">|</span>n<span style="color:#f92672">|</span> n<span style="color:#f92672">.</span>times{puts <span style="color:#e6db74">&#39;iam block&#39;</span>}} <span style="color:#75715e"># 印2次&#39;iam block&#39;</span>
+f2(<span style="color:#ae81ff">345</span><span style="color:#f92672"></span>)                              <span style="color:#75715e"># 印出 &#39;no block&#39;(無論傳甚麼n進去都不影響)</span>
+</code></pre></div><p>自己試試看</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">f2</span>(n, <span style="color:#f92672">&amp;</span>p)
+  <span style="color:#66d9ef">if</span> block_given?
+    <span style="color:#66d9ef">yield</span>(n,n<span style="color:#f92672">*</span>n)
+  <span style="color:#66d9ef">else</span>
+    puts <span style="color:#e6db74">&#39;no block&#39;</span>
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+f2(<span style="color:#ae81ff">2</span><span style="color:#f92672"></span>){<span style="color:#f92672">|</span>n<span style="color:#f92672">|</span> n<span style="color:#f92672">.</span>times{puts <span style="color:#e6db74">&#39;I am block&#39;</span>}}
+</code></pre></div></li>
+<li>
+<p>reject 的用法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># Remove even numbers</span>
+(<span style="color:#ae81ff">1</span><span style="color:#f92672"></span><span style="color:#f92672">..</span><span style="color:#ae81ff">30</span><span style="color:#f92672"></span>)<span style="color:#f92672">.</span>reject { <span style="color:#f92672">|</span>n<span style="color:#f92672">|</span> n <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672"></span><span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672"></span>}
+<span style="color:#75715e"># =&gt; [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29]</span>
+
+result <span style="color:#f92672">=</span> <span style="color:#f92672">[</span>{ <span style="color:#e6db74">a</span>: <span style="color:#ae81ff">1</span><span style="color:#f92672"></span>, <span style="color:#e6db74">b</span>: <span style="color:#ae81ff">5</span> <span style="color:#f92672"></span>}, { <span style="color:#e6db74">a</span>: <span style="color:#ae81ff">2</span> <span style="color:#f92672"></span>, <span style="color:#e6db74">b</span>: <span style="color:#ae81ff">6</span> <span style="color:#f92672"></span>}, { <span style="color:#e6db74">a</span>: <span style="color:#ae81ff">2</span><span style="color:#f92672"></span>, <span style="color:#e6db74">b</span>: <span style="color:#ae81ff">7</span> <span style="color:#f92672"></span>}, { <span style="color:#e6db74">a</span>: <span style="color:#ae81ff">4</span><span style="color:#f92672"></span>, <span style="color:#e6db74">b</span>: <span style="color:#ae81ff">8</span> <span style="color:#f92672"></span>}<span style="color:#f92672">]</span>
+result<span style="color:#f92672">.</span>reject {<span style="color:#f92672">|</span>content<span style="color:#f92672">|</span> content<span style="color:#f92672">[</span><span style="color:#e6db74">:a</span><span style="color:#f92672">]</span><span style="color:#f92672">.</span>eql? <span style="color:#ae81ff">2</span> <span style="color:#f92672"></span>}
+</code></pre></div></li>
+<li>
+<p><a href="https://motion-express.com/blog/20141010-ruby-block-map-collect">do&hellip;each</a></p>
+</li>
+</ol>
+<h4 id="debug">Debug</h4>
+<ol>
+<li>
+<p>如何使用byebug：</p>
+<ul>
+<li>next: 跳到下一行</li>
+<li>step: 若該行有行式，則進入該行</li>
+<li>up/down: up可以從step跳出來</li>
+</ul>
+</li>
+</ol>
+<p>更多請參考<a href="https://rails.ruby.tw/debugging_rails_applications.html">[3]</a>、<a href="https://rubyplus.com/articles/3631-Debugging-using-ByeBug-Gem-in-Rails-5">[4]</a></p>
+<ol start="2">
+<li>
+<p>pry-debug利器 :</p>
+<ul>
+<li>
+<p><a href="https://github.com/pry/pry">安裝</a>及<a href="http://blog.xdite.net/posts/2012/08/13/pry-the-new-debugger">使用</a></p>
+</li>
+<li>
+<p>continue: 继续执行程序直到结束</p>
+<p>finish: 继续执行直到当前frame结束</p>
+<p>next: 继续执行当前frame内的命令</p>
+<p>step: 跳过当前，进入下一个frame。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="進階用法">進階用法</h4>
+<ol>
+<li>
+<p><a href="https://refactoring.guru/design-patterns/ruby">Design Pattern</a></p>
+</li>
+<li>
+<p>介紹常用的<code>caller</code> 與 <code>source_location</code>的用法。有時候在找錯的時候，<code>caller</code>可以告訴我們它叫指定方法的時候，呼叫了其他哪些方法，而<code>source_location</code>則是可以告訴開發者實體跟類別方法實際存放的位置。<a href="https://kaochenlong.com/2011/08/09/how-to-find-a-method-definition-in-ruby/">高見龍</a>這篇文章有更進一步的說明</p>
+<ul>
+<li>
+<p>source_location的用法：</p>
+<ul>
+<li><!-- raw HTML omitted -->.method(:&lt;方法名&gt;).source_location                   #查詢類別方法所在位置</li>
+<li><!-- raw HTML omitted -->.instance_method(:&lt;方法名&gt;).source_location  #查詢實體方法所在位置</li>
+</ul>
+</li>
+<li>
+<p>caller的用法：</p>
+<ul>
+<li>caller、caller_locations、caller[0..2]、caller_locations[2..4]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="其他">其他</h4>
+<ol>
+<li>面試精選(<a href="https://ithelp.ithome.com.tw/users/20111177/ironman/1613">30天修煉Ruby面試精選30題</a>)</li>
+</ol>
+<h2 id="rails">Rails</h2>
+<h3 id="網路常識">網路常識</h3>
+<p>什麼是payload?</p>
+<p>google到一篇很好的文章對payload為何這樣叫有很好的解釋，文中指出這個名詞是借用運輸工具上的觀念而來的，例如：卡車、油罐車、貨輪等所謂的<strong>載具</strong>，然後通常一個載具的總重量一定<strong>大於</strong>載具的承載量，例如油罐車的總重量包含了他所運載的油量、司機的重量、油罐車行駛所需的油量，但我們所關心僅是油罐車所承載的油量而已。對programming來說，我們可以某api的response為例子來看</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">  {
+      <span style="color:#f92672">&#34;status&#34;</span>:<span style="color:#e6db74">&#34;OK&#34;</span>,
+      <span style="color:#f92672">&#34;data&#34;</span>:
+          {
+              <span style="color:#f92672">&#34;message&#34;</span>:<span style="color:#e6db74">&#34;Hello, world!&#34;</span>
+          }
+  }
+</code></pre></div><p>其中的Hello, world!正是payload，也是我們關心的部分。到這裡我們應該了解為何參數名要叫做<code>payload</code>，而非<code>data</code>或是<code>params</code>是有其目的性的，而更進一步的熟悉與使用payload這個參數，則就要再深入看該方法或函式的使用與定義了。其他請<a href="http://noelsaga.herokuapp.com/blog/2015/07/18/kai-fa-zhong-,chang-jian-de-can-shu-payloadshi-shi-mo">參考</a>。</p>
+<h3 id="基本功能">基本功能</h3>
+<ol>
+<li>
+<p>ActiveRecord::Enum：</p>
+<p>在Raills使用enum的好處為速度比較快，以及使用index的方式在資料庫比較好查詢。詳細請參考<a href="https://api.rubyonrails.org/v5.1.6/classes/ActiveRecord/Enum.html">[5]</a>、<a href="%5Bhttps://blog.niclin.tw/2017/07/30/%E4%BD%BF%E7%94%A8-avtiverecordenum-%E5%BB%BA%E7%AB%8B%E6%98%93%E8%AE%80%E7%9A%84%E7%8B%80%E6%85%8B%E5%B1%AC%E6%80%A7/%5D(https://blog.niclin.tw/2017/07/30/%E4%BD%BF%E7%94%A8-avtiverecordenum-%E5%BB%BA%E7%AB%8B%E6%98%93%E8%AE%80%E7%9A%84%E7%8B%80%E6%85%8B%E5%B1%AC%E6%80%A7/)">[6]</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Conversation</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>
+  enum <span style="color:#e6db74">status</span>: <span style="color:#f92672">[</span> <span style="color:#e6db74">:active</span>, <span style="color:#e6db74">:archived</span> <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#75715e"># 使用實體方法</span>
+<span style="color:#75715e"># conversation.update! status: 0</span>
+conversation<span style="color:#f92672">.</span>active!
+conversation<span style="color:#f92672">.</span>active? <span style="color:#75715e"># =&gt; true</span>
+conversation<span style="color:#f92672">.</span>status  <span style="color:#75715e"># =&gt; &#34;active&#34;</span>
+
+<span style="color:#75715e"># conversation.update! status: 1</span>
+conversation<span style="color:#f92672">.</span>archived!
+conversation<span style="color:#f92672">.</span>archived? <span style="color:#75715e"># =&gt; true</span>
+conversation<span style="color:#f92672">.</span>status    <span style="color:#75715e"># =&gt; &#34;archived&#34;</span>
+
+<span style="color:#75715e"># conversation.status = 1</span>
+conversation<span style="color:#f92672">.</span>status <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">archived</span><span style="color:#e6db74">&#34;</span>
+
+conversation<span style="color:#f92672">.</span>status <span style="color:#f92672">=</span> <span style="color:#66d9ef">nil</span>
+conversation<span style="color:#f92672">.</span>status<span style="color:#f92672">.</span>nil? <span style="color:#75715e"># =&gt; true</span>
+conversation<span style="color:#f92672">.</span>status      <span style="color:#75715e"># =&gt; nil</span>
+
+<span style="color:#75715e"># 使用類別方法</span>
+<span style="color:#66d9ef">Conversation</span><span style="color:#f92672">.</span>active
+<span style="color:#66d9ef">Conversation</span><span style="color:#f92672">.</span>archived
+
+<span style="color:#75715e"># 使用query</span>
+<span style="color:#66d9ef">Conversation</span><span style="color:#f92672">.</span>where(<span style="color:#e6db74">status</span>: <span style="color:#f92672">[</span><span style="color:#e6db74">:active</span>, <span style="color:#e6db74">:archived</span><span style="color:#f92672">]</span>)
+<span style="color:#66d9ef">Conversation</span><span style="color:#f92672">.</span>where<span style="color:#f92672">.</span>not(<span style="color:#e6db74">status</span>: <span style="color:#e6db74">:active</span>)
+</code></pre></div></li>
+<li>
+<p>rails logger <a href="https://rails.ruby.tw/debugging_rails_applications.html">用法</a></p>
+</li>
+<li>
+<p><code>before_save</code> <em>跟</em> <code>before_create</code> <em>的差別，在於</em> <code>before_save</code> <em>是每次存檔的時候都會經過，但</em> <code>before_create</code> <em>只有在「新增」的時候才會觸發。</em></p>
+</li>
+<li>
+<p>file_field 上傳圖片<a href="https://apidock.com/rails/ActionView/Helpers/FormHelper/file_field">用法</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">file_field(<span style="color:#e6db74">:user</span>, <span style="color:#e6db74">:avatar</span>)
+<span style="color:#75715e"># =&gt; &lt;input type=&#34;file&#34; id=&#34;user_avatar&#34; name=&#34;user[avatar]&#34; /&gt;</span>
+
+file_field(<span style="color:#e6db74">:post</span>, <span style="color:#e6db74">:image</span>, <span style="color:#e6db74">multiple</span>: <span style="color:#66d9ef">true</span>)
+<span style="color:#75715e"># =&gt; &lt;input type=&#34;file&#34; id=&#34;post_image&#34; name=&#34;post[image][]&#34; multiple=&#34;multiple&#34; /&gt;</span>
+
+file_field(<span style="color:#e6db74">:post</span>, <span style="color:#e6db74">:attached</span>, <span style="color:#e6db74">accept</span>: <span style="color:#e6db74">&#39;text/html&#39;</span>)
+<span style="color:#75715e"># =&gt; &lt;input accept=&#34;text/html&#34; type=&#34;file&#34; id=&#34;post_attached&#34; name=&#34;post[attached]&#34; /&gt;</span>
+
+file_field(<span style="color:#e6db74">:post</span>, <span style="color:#e6db74">:image</span>, <span style="color:#e6db74">accept</span>: <span style="color:#e6db74">&#39;image/png,image/gif,image/jpeg&#39;</span>)
+<span style="color:#75715e"># =&gt; &lt;input type=&#34;file&#34; id=&#34;post_image&#34; name=&#34;post[image]&#34; accept=&#34;image/png,image/gif,image/jpeg&#34; /&gt;</span>
+
+file_field(<span style="color:#e6db74">:attachment</span>, <span style="color:#e6db74">:file</span>, <span style="color:#e6db74">class</span>: <span style="color:#e6db74">&#39;file_input&#39;</span>)
+<span style="color:#75715e"># =&gt; &lt;input type=&#34;file&#34; id=&#34;attachment_file&#34; name=&#34;attachment[file]&#34; class=&#34;file_input&#34; /&gt;</span>
+</code></pre></div></li>
+<li>
+<p>Frozen String Literal:</p>
+<p>常數就不用加<code>.freeze</code>，更多請<a href="https://ithelp.ithome.com.tw/articles/10214518">參考</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#75715e"># frozen_string_literal: true</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BetLog</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Ganapati</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">BetLog</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div></li>
+<li>
+<p>淺談Concern：相同的方法要好好收納，其他請參考<a href="https://ithelp.ithome.com.tw/articles/10188073">[7]</a>、<a href="https://blog.niclin.tw/2019/07/30/rails-service-concern-library-different/">[8]</a></p>
+</li>
+<li>
+<p>好用除錯工具<a href="https://mgleon08.github.io/blog/2015/12/19/ruby-on-rails-debugging/">[9]</a>、<a href="https://docs.gitlab.com/ee/development/pry_debugging.html">[10]</a></p>
+</li>
+</ol>
+<h3 id="model">Model</h3>
+<ol>
+<li>
+<p>使用 <a href="https://apidock.com/rails/ActiveRecord/Calculations/pluck">pluck</a> 進行資料庫的 query</p>
+</li>
+<li>
+<p>How to get params from <a href="https://stackoverflow.com/questions/4352839/rails-how-to-get-all-parameters-from-url">url</a></p>
+</li>
+<li>
+<p>Reload the current <a href="https://stackoverflow.com/questions/7465259/how-can-i-reload-the-current-page-in-ruby-on-rails">page</a></p>
+</li>
+<li>
+<p><code>update</code>, <code>create</code>-&gt; 結果為true或false</p>
+<p><code>update!</code>, <code>create!</code>-&gt; 若出現錯誤會出現exception</p>
+</li>
+<li>
+<p>after_save, after_commit 之間的關係</p>
+<p>以下是 Active Record 可用的回呼，<strong>依照執行順序排序</strong>：</p>
+<p>3.1 新建物件</p>
+<ul>
+<li><code>before_validation</code></li>
+<li><code>after_validation</code></li>
+<li><code>before_save</code></li>
+<li><code>around_save</code></li>
+<li><code>before_create</code></li>
+<li><code>around_create</code></li>
+<li><code>after_create</code></li>
+<li><code>after_save</code></li>
+<li><code>after_commit/after_rollback</code></li>
+</ul>
+<h5 id="32-更新物件">3.2 更新物件</h5>
+<ul>
+<li><code>before_validation</code></li>
+<li><code>after_validation</code></li>
+<li><code>before_save</code></li>
+<li><code>around_save</code></li>
+<li><code>before_update</code></li>
+<li><code>around_update</code></li>
+<li><code>after_update</code></li>
+<li><code>after_save</code></li>
+<li><code>after_commit/after_rollback</code></li>
+</ul>
+<h5 id="33-刪除物件">3.3 刪除物件</h5>
+<ul>
+<li><code>before_destroy</code></li>
+<li><code>around_destroy</code></li>
+<li><code>after_destroy</code></li>
+<li><code>after_commit/after_rollback</code></li>
+</ul>
+</li>
+<li>
+<p>尋找資料庫的欄位（關鍵字：column, field）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">News</span><span style="color:#f92672">.</span>column_names
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">id</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">title</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">editor</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">category</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">content</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">summary</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">click_base</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">click</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">publish_at</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">user_id</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">created_at</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">updated_at</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">]</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">News</span><span style="color:#f92672">.</span>column_names<span style="color:#f92672">.</span>include? <span style="color:#e6db74">&#39;click&#39;</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">true</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>講解：</p>
+<ul>
+<li>
+<p>For a class</p>
+<p>Use <code>Class.column_names.include? attr_name</code> where <code>attr_name</code> is the string name of your attribute. In this case: <code>Number.column_names.include? 'one'</code></p>
+</li>
+<li>
+<p>For an instance</p>
+<p>Use <code>record.has_attribute?(:attr_name)</code> or <code>record.has_attribute?('attr_name')</code> (Rails 3.2+) or <code>record.attributes.has_key? attr_name</code>.</p>
+<p>In this case: <code>number.has_attribute?(:one)</code> or <code>number.has_attribute?('one')</code> or <code>number.attributes.has_key? 'one'</code></p>
+</li>
+</ul>
+<p>更多請<a href="https://stackoverflow.com/questions/1710004/how-to-check-if-a-model-has-a-certain-column-attribute">參考</a></p>
+</li>
+<li>
+<p>default_scope 請參考<a href="https://apidock.com/rails/ActiveRecord/Base/default_scope/class">[11]</a> 和 <a href="https://stackoverflow.com/questions/25087336/why-is-using-the-rails-default-scope-often-recommend-against">[12]</a>，其中[12]是討論詬病</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Article</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">ActiveRecord</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Base</span>
+  default_scope where(<span style="color:#e6db74">:published</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">true</span>)
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#66d9ef">Article</span><span style="color:#f92672">.</span>all <span style="color:#75715e"># =&gt; SELECT * FROM articles WHERE published = true</span>
+</code></pre></div></li>
+<li>
+<p><a href="https://www.justinweiss.com/articles/search-and-filter-rails-models-without-bloating-your-controller/">Search and Filter Rails Models Without Bloating Your Controller</a></p>
+</li>
+</ol>
+<h3 id="mongodb">Mongodb</h3>
+<ol>
+<li>
+<p>How to use <code>new_record?</code></p>
+<p>Returns true if this object hasn’t been saved yet — that is, a record for the object doesn’t exist yet; otherwise, returns false.</p>
+</li>
+<li>
+<p>How to use <code>find_or_create_by</code></p>
+<p>Finds the first record with the given attributes, or creates a record with the attributes if one is not found</p>
+</li>
+<li>
+<p>How to use <code>find_or_initialize_by</code></p>
+<p>Like <code>find_or_create_by,</code> but calls <code>new</code> instead of <code>create</code></p>
+</li>
+</ol>
+<h3 id="controller">Controller</h3>
+<ol>
+<li>
+<p>controller 的每一個 action 裡面，都有 <code>request</code> 和 <code>response</code></p>
+</li>
+<li>
+<p>request 有很多方法可以使用，常用的方法為 <code>params</code>, <code>parameters</code>, <code>format</code>, <code>base_url</code>, <code>method</code>, <code>path</code>：</p>
+<ul>
+<li>
+<p><code>request.domain</code></p>
+</li>
+<li>
+<p><code>request.subdomain</code></p>
+</li>
+<li>
+<p><code>request.path</code></p>
+</li>
+<li>
+<p><code>request.ip</code> -&gt; 訪問的IP</p>
+</li>
+<li>
+<p><code>request.remote_ip</code></p>
+<p><code>remote_ip</code> 與 <code>ip</code> 不同</p>
+</li>
+<li>
+<p><code>request.base_url</code></p>
+</li>
+<li>
+<p><code>request.host</code></p>
+</li>
+<li>
+<p><code>request.params</code>, <code>request.parameters</code></p>
+</li>
+<li>
+<p><code>request.original_url</code> -&gt; <a href="https://apidock.com/rails/ActionDispatch/Request/original_url">訪問網址</a></p>
+</li>
+<li>
+<p><code>request.referrer</code>         -&gt; <a href="https://stackoverflow.com/questions/4652084/ruby-on-rails-how-do-you-get-the-previous-url">返回網址</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>ActionController::ParameterMissing 的<a href="https://stackoverflow.com/questions/20346320/actioncontrollerparametermissing-param-not-found-order/20346477">原因</a></p>
+</li>
+<li>
+<p>在 Rails 中，web requests 是透過<code>Action Controller</code> 和 <code>Action Viewer</code> 來處理，一般來說 Action Controller 關注的是和資料庫溝通以及處理 CRUD；Action View 則負責編譯要回傳的 response。</p>
+<p>從 Controller 中，我們主要有三種建立回應的方式，分別是 <code>render</code>, <code>redirect_to</code> 和 <code>head</code>：</p>
+<ul>
+<li><code>render</code>: 建立一個完整的回應，並回傳給瀏覽器</li>
+<li><code>redirect_to</code>：傳送 HTTP redirect status code 給瀏覽器</li>
+<li><code>head</code>：傳送只有 HTTP headers 的內容給瀏覽器</li>
+</ul>
+<p>在 Rails 中，一份完整的 HTML 檔會包含 <code>templates</code>, <code>partials</code> 和 <code>layouts</code> 三個部分，其他請<a href="https://pjchender.github.io/2017/10/03/rails-action-view-layout-partial-render/">參考</a></p>
+</li>
+<li>
+<p>Controller 使用 <a href="http://noelsaga.herokuapp.com/blog/2018/01/23/ruby-shi-yong-monkey-patch-de-jian-yi">Monkey Patch</a></p>
+</li>
+</ol>
+<h3 id="view">View</h3>
+<ol>
+<li>simple form <a href="http://simple-form-bootstrap.plataformatec.com.br/documentation">用法</a></li>
+<li>使用html表單時，如何使用 <a href="https://stackoverflow.com/questions/23932425/authenticity-token-is-missing-in-custom-action">CSRF</a> 保護</li>
+</ol>
+<h3 id="tool">Tool</h3>
+<p>如何<a href="https://stackoverflow.com/questions/4473229/rails-server-says-port-already-used-how-to-kill-that-process">強致終止</a> rails server</p>
+<h3 id="devise">Devise</h3>
+<ol>
+<li>Devise <a href="https://andyyou.github.io/2015/04/04/devise/">快速上手</a></li>
+<li>兩種用戶：<a href="https://medium.com/@tienshunlo_32785/rails-devise%E7%B3%BB%E5%88%97%E6%96%87-%E5%AF%A6%E4%BD%9C%E5%85%A9%E7%A8%AE%E7%94%A8%E6%88%B6-user-%E8%B7%9F-admin-e86018df4e88">user, admin</a></li>
+<li>Making email as optional (not mandatory) field in devise in Rails，請看<a href="http://nirmalhota.com/2016/08/tip-making-email-as-optional-field-in-devise-in-rails/">[13]</a> 和 <a href="https://ruby-china.org/topics/21620">[14]</a></li>
+</ol>
+<h3 id="routes">Routes</h3>
+<ol>
+<li>
+<p><a href="https://ihower.tw/rails/routing.html">實戰聖經</a></p>
+</li>
+<li>
+<p>如何拿掉前綴：</p>
+<p><a href="https://rails.ruby.tw/routing.html">使用</a><code>scope module</code></p>
+</li>
+<li>
+<p><code>rails routes</code> 的<a href="%5Bhttps://pjchender.github.io/2017/10/02/rails-routes-%E7%9A%84%E4%BD%BF%E7%94%A8/%5D(https://pjchender.github.io/2017/10/02/rails-routes-%E7%9A%84%E4%BD%BF%E7%94%A8/)">用法</a></p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">   bin/rails routes                # 列出所有路由
+   bin/rails routes -g admin       # 搜尋特定路由 (grep)
+   bin/rails routes -c admin/users # 搜尋路由中特定 controller
+</code></pre></div><ol start="4">
+<li>面試題目：<code>collection</code> 和 <code>member</code> 的差別在於，<code>collection</code>前面沒有id，但<code>member</code>有，其他請<a href="https://railsbook.tw/chapters/11-routes.html">參考</a></li>
+</ol>
+<h3 id="form">Form</h3>
+<ol>
+<li>私房菜（大推）：https://pjchender.github.io/2017/10/12/rails-action-view-form-helpers/</li>
+<li>使用form_for：https://apidock.com/rails/ActionView/Helpers/FormHelper/form_for</li>
+</ol>
+<h3 id="migration">Migration</h3>
+<p><a href="https://ihower.tw/rails/migrations.html">實戰聖經</a></p>
+<h3 id="rubocop">Rubocop</h3>
+<ol>
+<li>
+<p>How to correctly use <code>guard clause</code> in Ruby</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">require_admin</span>
+  <span style="color:#66d9ef">unless</span> current_user <span style="color:#f92672">&amp;&amp;</span> current_user<span style="color:#f92672">.</span>role <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;admin&#39;</span>
+    flash<span style="color:#f92672">[</span><span style="color:#e6db74">:error</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">You are not an admin</span><span style="color:#e6db74">&#34;</span>
+    redirect_to root_path
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+
+<span style="color:#75715e"># 改成以下方式</span>
+<span style="color:#75715e"># 說明：You can use the return statement here. Essentially, there is no need for the method to continue if those conditions are met, so you can bail out early.</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">require_admin</span>
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">if</span> current_user <span style="color:#f92672">&amp;&amp;</span> current_user<span style="color:#f92672">.</span>role <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;admin&#39;</span>
+
+  flash<span style="color:#f92672">[</span><span style="color:#e6db74">:error</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">You are not an admin</span><span style="color:#e6db74">&#34;</span>
+  redirect_to root_path
+<span style="color:#66d9ef">end</span>
+</code></pre></div></li>
+</ol>
+<h3 id="association">Association</h3>
+<ol>
+<li>
+<p>基本的關聯請參考<a href="https://guides.rubyonrails.org/association_basics.html">這篇</a></p>
+</li>
+<li>
+<p>How to <a href="https://stackoverflow.com/questions/1283858/rails-polymorphic-relationship-and-link-to">use</a> Rails Polymorphic relationship and link_to</p>
+</li>
+<li>
+<p>Rails 5 之後對 <code>belongs_to</code> 加入的新限制。如果覺得這樣有點麻煩想要關掉，可在 <code>belongs_to</code> 後面加上 <code>optional: true</code> 的參數</p>
+</li>
+<li>
+<p>When you declare a <code>belongs_to</code> association, the declaring class automatically gains 6 methods related to the association:</p>
+<ul>
+<li><code>association</code></li>
+<li><code>association=(associate)</code></li>
+<li><code>build_association(attributes = {})</code></li>
+<li><code>create_association(attributes = {})</code></li>
+<li><code>create_association!(attributes = {})</code></li>
+<li><code>reload_association</code></li>
+</ul>
+<p>When you declare a <code>has_many</code> association, the declaring class automatically gains 17 methods related to the association:</p>
+<ul>
+<li><code>collection</code></li>
+<li><code>collection&lt;&lt;(object, ...)</code></li>
+<li><code>collection.delete(object, ...)</code></li>
+<li><code>collection.destroy(object, ...)</code></li>
+<li><code>collection=(objects)</code></li>
+<li><code>collection_singular_ids</code></li>
+<li><code>collection_singular_ids=(ids)</code></li>
+<li><code>collection.clear</code></li>
+<li><code>collection.empty?</code></li>
+<li><code>collection.size</code></li>
+<li><code>collection.find(...)</code></li>
+<li><code>collection.where(...)</code></li>
+<li><code>collection.exists?(...)</code></li>
+<li><code>collection.build(attributes = {}, ...)</code></li>
+<li><code>collection.create(attributes = {})</code></li>
+<li><code>collection.create!(attributes = {})</code></li>
+<li><code>collection.reload</code></li>
+</ul>
+<p>When initializing a new <code>has_one</code> or <code>belongs_to</code> association you must use the <code>build_</code> prefix to build the association, rather than the <code>association.build</code> method that would be used for <code>has_many</code> or <code>has_and_belongs_to_many</code> associations. To create one, use the <code>create_</code> prefix.</p>
+<p>以第十二週的進度來說，news_controller.rb 的 new <code>一對一</code>跟<code>一對多</code>的方法都寫在上面，可以提供參考</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Admin</span><span style="color:#f92672">::</span><span style="color:#66d9ef">NewsController</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">Admin</span><span style="color:#f92672">::</span><span style="color:#66d9ef">BaseController</span>
+  <span style="color:#f92672">...</span>
+  <span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">new</span>
+    @article <span style="color:#f92672">=</span> <span style="color:#66d9ef">News</span><span style="color:#f92672">.</span>new
+    <span style="color:#75715e"># 一對多</span>
+    <span style="color:#75715e"># @article.messages.build</span>
+    <span style="color:#75715e"># @article.galleries.build</span>
+
+    <span style="color:#75715e"># 一對一</span>
+    @article<span style="color:#f92672">.</span>build_message
+    @article<span style="color:#f92672">.</span>build_gallery
+
+    add_breadcrumb <span style="color:#e6db74">&#39;new&#39;</span>, <span style="color:#e6db74">:new_news_path</span>
+  <span style="color:#66d9ef">end</span>
+  <span style="color:#f92672">...</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div></li>
+</ol>
+<h3 id="restclient">RestClient</h3>
+<ol>
+<li>
+<p>stack overflow 請<a href="https://stackoverflow.com/questions/8452410/rest-client-example-in-ruby">參考</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">require <span style="color:#e6db74">&#39;rest-client&#39;</span>
+
+<span style="color:#66d9ef">RestClient</span><span style="color:#f92672">.</span>get <span style="color:#e6db74">&#39;http://example.com/resource&#39;</span>, {<span style="color:#e6db74">:params</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> {<span style="color:#e6db74">:id</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">50</span><span style="color:#f92672"></span>, <span style="color:#e6db74">&#39;foo&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;bar&#39;</span>}}
+<span style="color:#66d9ef">RestClient</span><span style="color:#f92672">.</span>get <span style="color:#e6db74">&#39;http://example.com/resource&#39;</span>
+
+xml <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;xml&gt;&lt;foo&gt;bar&lt;/foo&gt;&lt;bar&gt;foo&lt;/bar&gt;&lt;/xml&gt;&#39;</span>
+<span style="color:#66d9ef">RestClient</span><span style="color:#f92672">.</span>post <span style="color:#e6db74">&#39;http://example.com/resource&#39;</span>, xml , {<span style="color:#e6db74">:content_type</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">:xml</span>}
+<span style="color:#66d9ef">RestClient</span><span style="color:#f92672">.</span>put <span style="color:#e6db74">&#39;http://example.com/resource&#39;</span>, xml , {<span style="color:#e6db74">:content_type</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">:xml</span>}
+
+<span style="color:#66d9ef">RestClient</span><span style="color:#f92672">.</span>delete <span style="color:#e6db74">&#39;http://example.com/resource&#39;</span>
+</code></pre></div></li>
+<li>
+<p>Rest-Client (<a href="https://github.com/rest-client/rest-client">GitHub</a>)</p>
+</li>
+<li>
+<p>Rest-Client(<a href="https://www.cnblogs.com/znsongshu/p/9462352.html">get/post</a>)</p>
+</li>
+<li>
+<p>使用 RestClient::Request.execute(sty_params)</p>
+<ul>
+<li>get</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">self<span style="color:#f92672">.</span>sty_params <span style="color:#f92672">=</span> {
+  method: <span style="color:#e6db74">:get</span>,
+  <span style="color:#e6db74">url</span>: @key<span style="color:#f92672">[</span><span style="color:#e6db74">:game_url</span><span style="color:#f92672">]</span>,
+  <span style="color:#e6db74">headers</span>: {
+    <span style="color:#e6db74">params</span>: {
+      <span style="color:#e6db74">proxy</span>: @key<span style="color:#f92672">[</span><span style="color:#e6db74">:proxy</span><span style="color:#f92672">]</span>,
+      <span style="color:#e6db74">requestTime</span>: @timenow,
+      <span style="color:#e6db74">d</span>: self<span style="color:#f92672">.</span>class<span style="color:#f92672">.</span>aes_encrypt(description, @key<span style="color:#f92672">[</span><span style="color:#e6db74">:des_key</span><span style="color:#f92672">]</span>),
+      <span style="color:#e6db74">key</span>: self<span style="color:#f92672">.</span>class<span style="color:#f92672">.</span>gen_key(@key, timenow),
+    },
+  },
+}
+</code></pre></div><ul>
+<li>post：payload 的格式取決於 headers，可能為json, xml, txt&hellip;等等</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">self<span style="color:#f92672">.</span>sty_params <span style="color:#f92672">=</span> {
+  method: <span style="color:#e6db74">:post</span>,
+  <span style="color:#e6db74">url</span>: <span style="color:#66d9ef">GamesV3</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Mg</span><span style="color:#f92672">::</span><span style="color:#66d9ef">MG_MEMBER_BASE_URL</span>,
+  <span style="color:#e6db74">payload</span>: builder<span style="color:#f92672">.</span>doc<span style="color:#f92672">.</span>root<span style="color:#f92672">.</span>to_xml,
+  <span style="color:#e6db74">headers</span>: {
+    <span style="color:#e6db74">&#39;Content-Type&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;application/xml&#39;</span>,
+    <span style="color:#e6db74">&#39;X-Requested-With&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;X-Api-Client&#39;</span>,
+    <span style="color:#e6db74">&#39;X-Api-Call&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;X-Api-Client&#39;</span>,
+  },
+}
+
+<span style="color:#75715e"># 其中 builder</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">builder</span>
+  <span style="color:#66d9ef">Nokogiri</span><span style="color:#f92672">::</span><span style="color:#66d9ef">XML</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Builder</span><span style="color:#f92672">.</span>new <span style="color:#66d9ef">do</span> <span style="color:#f92672">|</span>xml<span style="color:#f92672">|</span>
+    xml<span style="color:#f92672">.</span>send(@xml_call, @params)
+  <span style="color:#66d9ef">end</span>
+<span style="color:#66d9ef">end</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">self<span style="color:#f92672">.</span>sty_params <span style="color:#f92672">=</span> {
+  method: <span style="color:#e6db74">:put</span>,
+  <span style="color:#e6db74">url</span>: <span style="color:#66d9ef">GamesV3</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Mg</span><span style="color:#f92672">::</span><span style="color:#66d9ef">MG_DOMAIN</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/lps/secure/network/</span><span style="color:#e6db74">#{</span>@token_id<span style="color:#e6db74">}</span><span style="color:#e6db74">/downline</span><span style="color:#e6db74">&#34;</span>,
+  <span style="color:#e6db74">payload</span>: @params<span style="color:#f92672">.</span>to_json,
+  <span style="color:#e6db74">headers</span>: {
+    <span style="color:#e6db74">&#39;Content-Type&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;application/json&#39;</span>,
+    <span style="color:#e6db74">&#39;X-Requested-With&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;X-Api-Client&#39;</span>,
+    <span style="color:#e6db74">&#39;X-Api-Call&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;X-Api-Client&#39;</span>,
+    <span style="color:#e6db74">&#39;X-Api-Auth&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> @token,
+  },
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">self<span style="color:#f92672">.</span>sty_params <span style="color:#f92672">=</span> {
+  method: <span style="color:#e6db74">:post</span>,
+  <span style="color:#e6db74">url</span>: <span style="color:#66d9ef">GamesV3</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Mg</span><span style="color:#f92672">::</span><span style="color:#66d9ef">MG_DOMAIN</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/lps/j_spring_security_check&#39;</span>,
+  <span style="color:#e6db74">payload</span>: @params,
+  <span style="color:#e6db74">headers</span>: {
+    <span style="color:#e6db74">&#39;X-Requested-With&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;X-Api-Client&#39;</span>,
+    <span style="color:#e6db74">&#39;X-Api-Call&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;X-Api-Client&#39;</span>,
+  },
+}
+</code></pre></div><ul>
+<li>
+<p>put</p>
+<p>How to use:  RestClient.<strong>put</strong>(url, payload, headers = {}, &amp;block) ⇒ <code>Object</code></p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">self<span style="color:#f92672">.</span>sty_params <span style="color:#f92672">=</span> {
+  method: <span style="color:#e6db74">:put</span>,
+  <span style="color:#e6db74">url</span>: <span style="color:#66d9ef">GamesV3</span><span style="color:#f92672">::</span><span style="color:#66d9ef">Mg</span><span style="color:#f92672">::</span><span style="color:#66d9ef">MG_DOMAIN</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/lps/secure/network/</span><span style="color:#e6db74">#{</span>@token_id<span style="color:#e6db74">}</span><span style="color:#e6db74">/downline</span><span style="color:#e6db74">&#34;</span>,
+  <span style="color:#e6db74">payload</span>: @params<span style="color:#f92672">.</span>to_json,
+  <span style="color:#e6db74">headers</span>: {
+    <span style="color:#e6db74">&#39;Content-Type&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;application/json&#39;</span>,
+    <span style="color:#e6db74">&#39;X-Requested-With&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;X-Api-Client&#39;</span>,
+    <span style="color:#e6db74">&#39;X-Api-Call&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> <span style="color:#e6db74">&#39;X-Api-Client&#39;</span>,
+    <span style="color:#e6db74">&#39;X-Api-Auth&#39;</span> <span style="color:#f92672">=</span><span style="color:#f92672">&gt;</span> @token,
+  },
+}
+</code></pre></div></li>
+</ol>
+<h3 id="validation">Validation</h3>
+<ol>
+<li>驗證日期、時間請<a href="https://code-examples.net/zh-TW/q/14eb2e">參考</a></li>
+</ol>
+<h3 id="gem">Gem</h3>
+<ol>
+<li>Annotate：<a href="https://medium.com/%E5%AF%A6%E7%94%A8%E7%9A%84rubygems/annotate-%E5%9C%A8activerecord%E9%96%8B%E9%A0%AD%E9%A1%AF%E7%A4%BA%E8%B3%87%E6%96%99%E8%A1%A8%E5%85%A7%E5%AE%B9-a93d7efb459d">[15]</a>、<a href="https://www.driftingruby.com/episodes/annotate">[16]</a></li>
+<li><a href="https://github.com/thoughtbot/high_voltage">High-Voltage</a></li>
+</ol>
+<h3 id="測試">測試</h3>
+<p>在測試中，<code>should</code> 跟 <code>expect(response).to</code> 都不是好寫法，寫成 is_expected.to，更多請參考<a href="http://www.betterspecs.org/">如何寫好的測試</a></p>
+<h3 id="好文">好文</h3>
+<p><a href="https://mgleon08.github.io/blog/categories/rails/">Leon</a>、<a href="https://blog.niclin.tw/">Nic</a>、簡易票選系統（<a href="https://railsbook.tw/chapters/13-crud-part-1.html">高見龍</a>）</p>
+<h2 id="sinatra">Sinatra</h2>
+<p>高見龍老師講<a href="https://www.slideshare.net/ryudoawaru/mopcon2014">Sinatra</a></p>
+<h2 id="docker">Docker</h2>
+<p>用 Docker 部署 Rails，原來是<a href="https://5xruby.tw/posts/deploying-your-docker-rails-app/">這樣</a></p>
+<h2 id="待看影片">待看影片</h2>
+<ol>
+<li>Strong Params: <a href="https://www.driftingruby.com/episodes/complex-strong-parameters">https://www.driftingruby.com/episodes/complex-strong-parameters</a></li>
+<li>View Form
+<ul>
+<li><a href="https://www.driftingruby.com/episodes/not-rjs-and-turbolinks">https://www.driftingruby.com/episodes/not-rjs-and-turbolinks</a></li>
+<li><a href="https://www.driftingruby.com/episodes/not-rjs-and-turbolinks-part-2">https://www.driftingruby.com/episodes/not-rjs-and-turbolinks-part-2</a></li>
+<li><a href="https://www.driftingruby.com/episodes/dry-up-your-javascript">https://www.driftingruby.com/episodes/dry-up-your-javascript</a></li>
+<li><a href="https://www.driftingruby.com/episodes/client-side-validations">https://www.driftingruby.com/episodes/client-side-validations</a></li>
+<li><a href="https://ihower.tw/rails/actioncontroller.html">https://ihower.tw/rails/actioncontroller.html</a>（講解crsf token）</li>
+<li>跳脫controller：https://www.driftingruby.com/episodes/actioncontroller-renderer</li>
+</ul>
+</li>
+<li>Websocket:
+<ul>
+<li><a href="https://www.driftingruby.com/episodes/faye-websockets-part-1">https://www.driftingruby.com/episodes/faye-websockets-part-1</a></li>
+<li><a href="https://www.driftingruby.com/episodes/faye-websockets-part-2">https://www.driftingruby.com/episodes/faye-websockets-part-2</a></li>
+</ul>
+</li>
+<li>SEO: <a href="https://www.driftingruby.com/episodes/meta-tags">https://www.driftingruby.com/episodes/meta-tags</a></li>
+<li>增進效能：https://www.driftingruby.com/episodes/eager-loading-with-goldiloader</li>
+<li>部署：https://www.driftingruby.com/episodes/production-deployment-on-ubuntu</li>
+<li>bundle open：看Gem裡面的程式碼，相關設定要 export</li>
+<li>calendar：https://www.driftingruby.com/episodes/fullcalendar-events-and-scheduling</li>
+<li>pundit：https://www.driftingruby.com/episodes/authorization-with-pundit</li>
+<li>rails api：
+<ul>
+<li><a href="https://www.driftingruby.com/episodes/rails-api-basics">https://www.driftingruby.com/episodes/rails-api-basics</a></li>
+<li><a href="https://www.driftingruby.com/episodes/rails-api-active-model-serializer">https://www.driftingruby.com/episodes/rails-api-active-model-serializer</a></li>
+<li><a href="https://www.driftingruby.com/episodes/rails-api-authentication-with-jwt">https://www.driftingruby.com/episodes/rails-api-authentication-with-jwt</a> (已經在電腦上)</li>
+</ul>
+</li>
+<li>add index in database: <a href="https://www.driftingruby.com/episodes/database-index-optimization-and-migration-maintenance">https://www.driftingruby.com/episodes/database-index-optimization-and-migration-maintenance</a></li>
+<li>chart: <a href="https://www.driftingruby.com/episodes/charts-and-graphs">https://www.driftingruby.com/episodes/charts-and-graphs</a></li>
+<li>redis: <a href="https://www.driftingruby.com/episodes/redis-basics">https://www.driftingruby.com/episodes/redis-basics</a></li>
+<li>sidekiq: <a href="https://www.driftingruby.com/episodes/sidekiq-basics">https://www.driftingruby.com/episodes/sidekiq-basics</a></li>
+<li>加密：https://www.driftingruby.com/episodes/client-side-encryption</li>
+<li>ruby技巧：https://www.driftingruby.com/episodes/random-ruby-tips-and-tricks</li>
+<li>Search：https://www.driftingruby.com/episodes/searchkick-and-elasticsearch</li>
+<li>locale：https://www.driftingruby.com/episodes/working-with-internationalization</li>
+<li>Nested Form：
+<ul>
+<li><a href="https://www.driftingruby.com/episodes/nested-forms-from-scratch">https://www.driftingruby.com/episodes/nested-forms-from-scratch</a></li>
+<li><a href="https://www.driftingruby.com/episodes/nested-forms-with-cocoon">https://www.driftingruby.com/episodes/nested-forms-with-cocoon</a></li>
+</ul>
+</li>
+<li>JS
+<ul>
+<li>某頁面專用JS：https://www.driftingruby.com/episodes/page-specific-javascript-in-ruby-on-rails</li>
+<li>配合 Form：https://www.driftingruby.com/episodes/javascript-select-form-fields-with-chosen</li>
+<li>裁切照片：https://www.driftingruby.com/episodes/cropping-images-with-jcrop</li>
+</ul>
+</li>
+<li>Routes
+<ul>
+<li>高級用法：https://www.driftingruby.com/episodes/routing-partials</li>
+</ul>
+</li>
+<li>Data Tables：https://www.driftingruby.com/episodes/datatables</li>
+<li>Subdomain：https://www.driftingruby.com/episodes/datatables</li>
+<li>肥貓的遊戲服務：https://www.driftingruby.com/episodes/creating-custom-ruby-on-rails-generators</li>
+<li>Error
+<ul>
+<li>Slack：https://www.driftingruby.com/episodes/custom-error-pages-with-slack-notification</li>
+</ul>
+</li>
+<li>database：https://www.driftingruby.com/episodes/activerecord-migrations</li>
+<li>Autocomplete Search：https://gorails.com/episodes/global-autocomplete-search?autoplay=1</li>
+<li>部落格系統範例：https://snipcart.com/blog/rails-ecommerce-tutorial-refinery-cms</li>
+<li>Using VueJS for Nested Forms in Rails
+<ul>
+<li>Part 1：https://gorails.com/episodes/using-vuejs-for-nested-forms-part-1?autoplay=1</li>
+<li>Part 2：https://gorails.com/episodes/using-vuejs-for-nested-forms-part-2?autoplay=1</li>
+</ul>
+</li>
+<li>Ahoy and Blazer：
+<ul>
+<li><a href="https://gorails.com/episodes/internal-metrics-with-ahoy-and-blazer">https://gorails.com/episodes/internal-metrics-with-ahoy-and-blazer</a></li>
+</ul>
+</li>
+</ol>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/hugo/" data-toggle="tooltip" data-placement="top" title="How I use Hugo to build a Website">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/job/" data-toggle="tooltip" data-placement="top" title="Interview">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/rails" title="rails">
+                            rails
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ruby-on-rails" title="ruby-on-rails">
+                            ruby-on-rails
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                    
+                    <li>
+                        <a href="mailto:k445566778899k@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=100000397072220">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/ChenHanTing">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/feed/?trk=onboarding-landing">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; HanTing&#39;s Blog 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

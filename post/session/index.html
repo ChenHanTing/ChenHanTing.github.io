@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="HanTing&#39;s Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://chenhanting.github.io//https://i0.wp.com/img.hojenjen.com/uploads/2017/10/1506964794-4efdd2f969559e8b1c92e99f32ded48e.jpg">
+    <meta property="twitter:image" content="https://chenhanting.github.io//https://i0.wp.com/img.hojenjen.com/uploads/2017/10/1506964794-4efdd2f969559e8b1c92e99f32ded48e.jpg" />
+    
+
+    
+    <meta name="title" content="What is the difference between Session and Cookie" />
+    <meta property="og:title" content="What is the difference between Session and Cookie" />
+    <meta property="twitter:title" content="What is the difference between Session and Cookie" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>What is the difference between Session and Cookie-陳漢庭的部落格 | HanTing Blog</title>
+
+    <link rel="canonical" href="/post/session/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">HanTing&#39;s Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech">tech</a>
+                        </li>
+                        
+                    
+                    
+		    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('https://i0.wp.com/img.hojenjen.com/uploads/2017/10/1506964794-4efdd2f969559e8b1c92e99f32ded48e.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/rails" title="rails">
+                            rails
+                        </a>
+                        
+                        <a class="tag" href="/tags/session" title="session">
+                            session
+                        </a>
+                        
+                        <a class="tag" href="/tags/cookie" title="cookie">
+                            cookie
+                        </a>
+                        
+                    </div>
+                    <h1>What is the difference between Session and Cookie</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                            HanTing
+                         
+                        on 
+                        Thursday, January 23, 2020
+                        
+                            <span id="/post/session/" class="leancloud_visitors meta_data_item" data-flag-title="">
+    <span class="post-meta-item-icon">
+      <span class="octicon octicon-eye"></span> 
+    </span>
+    <i class="fa fa-eye"></i>
+    <span class="old-visitors-count" style="display: none;"></span>
+    <span class="leancloud-visitors-count"></span>
+</span>
+
+
+
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+
+<script>
+	AV.initialize("", "");
+</script>
+
+<script type="text/javascript">
+function showTime(Counter) {
+    var query = new AV.Query(Counter);
+    var entries = [];
+    var $visitors = $(".leancloud_visitors");
+
+    $visitors.each(function() {
+        entries.push($(this).attr("id").trim());
+    });
+
+    query.containedIn('url', entries);
+    query.find()
+        .done(function(results) {
+            var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+            var OLD_COUNT_CONTAINER_REF = '.old-visitors-count';
+
+            
+            
+            
+            
+
+            for (var i = 0; i < results.length; i++) {
+                var item = results[i];
+                var url = item.get('url');
+                var time = item.get('time');
+                var element = document.getElementById(url);
+
+                $(element).find(COUNT_CONTAINER_REF).text(time);
+            }
+            for (var i = 0; i < entries.length; i++) {
+                var url = entries[i];
+                var element = document.getElementById(url);
+                var countSpan = $(element).find(COUNT_CONTAINER_REF);
+                if (countSpan.text() == '') {
+                    var oldCountSpan = $(element).find(OLD_COUNT_CONTAINER_REF).text();
+                    if(oldCountSpan!=''){
+                        countSpan.text(0+parseInt(oldCountSpan));
+                    }else{
+                        countSpan.text(0);          
+                    }
+                }
+            }
+        })
+        .fail(function(object, error) {
+            console.log("Error: " + error.code + " " + error.message);
+        });
+}
+
+function addCount(Counter) {
+    var $visitors = $(".leancloud_visitors");
+    var url = $visitors.attr('id').trim();
+    var title = $visitors.attr('data-flag-title').trim();
+    var query = new AV.Query(Counter);
+
+    query.equalTo("url", url);
+    query.find({
+        success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment("time");
+                counter.save(null, {
+                    success: function(counter) {
+                        var $element = $(document.getElementById(url));
+                        $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+                var newcounter = new Counter();
+                 
+                var acl = new AV.ACL();
+                acl.setPublicReadAccess(true);
+                acl.setPublicWriteAccess(true);
+                newcounter.setACL(acl);
+                 
+                newcounter.set("title", title);
+                newcounter.set("url", url);
+                var OLD_COUNT_CONTAINER_REF = '.old-visitors-count';
+                var $element = $(document.getElementById(url));
+                var oldCountSpan = $element.find(OLD_COUNT_CONTAINER_REF).text();
+                if(oldCountSpan!=''){
+                    newcounter.set("time", parseInt(oldCountSpan)+1);
+                }else{
+ 	                    newcounter.set("time",  1);
+                }
+                newcounter.save(null, {
+                    success: function(newcounter) {
+                        var $element = $(document.getElementById(url));
+                        $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                    },
+                    error: function(newcounter, error) {
+                        console.log('Failed to create');
+                    }
+                });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + " " + error.message);
+        }
+    });
+}
+$(function() {
+    var Counter = AV.Object.extend("Counter");
+    
+    
+    if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+    } else {
+        showTime(Counter);
+    }
+});
+</script>
+
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>Rails面試中其中之一最容易被問的問題，就是Session與Cookie的差別。Session和Cookie被官方文件，以及Ihower的實戰聖經歸類在Controller的文章中。</p>
+<p>講到session和cookie，就要先從在網頁中，HTTP stateless的特性開始講述</p>
+<p>所謂stateless，就是server無法在不同的request/response cycle中記住資訊。<a href="https://medium.com/@hulitw/session-and-cookie-15e47ed838bc">這篇</a>以沒有記憶力的小明比喻HTTP stateless的特性。request對於server來說，每次都是全新的request一樣，server無法得知上個request的狀態。session和cookie在這邊扮演輔助記憶的角色。</p>
+<p>Cookie 是把資料存在瀏覽器裡面，最常見到的 Cookie 應用是在表單填寫，假設在頁面上的表單資料填到一半，不小心把網頁關掉，這時再重新打開發現先前填的內容還在的話，靠的就是 cookie，這種沒有安全性的設定可以用字串被存在Cookie裡面。</p>
+<p>在Rails中，有四種機制來儲存session</p>
+<ol>
+<li><code>ActionDispatch::Session::CookieStore</code> ─ 所有資料都存在用戶端。</li>
+<li><code>ActionDispatch::Session::CacheStore</code> ─ 資料存在 Rails 的 Cache。</li>
+<li><code>ActionDispatch::Session::ActiveRecordStore</code> ─ 資料使用 Active Record 存在資料庫（需要 <code>activerecord-session_store</code> RubyGem）。</li>
+<li><code>ActionDispatch::Session::MemCacheStore</code> ─ 資料存在 memcached（這是遠古時代的實作方式，考慮改用 CacheStore 吧）</li>
+</ol>
+<p>在Rails中預設使用 CookieStore 儲存session。這個選項最大的不同在於會將所有的session資訊經過加密後，存在cookie當中，Server可以直接透過cookie得到session的資料，而不是透過存取session ID 到伺服器上查詢 Session 資料。存在 Cookie 的資料經過加密簽署，防止有心人士竄改。即便是擁有 Session 資料存取權的人，也無法讀取內容（內容經過加密）。如果 Cookie 的資料遭到修改，Rails 也不會使用這個資料。<a href="https://api.rubyonrails.org/classes/ActionDispatch/Session/CookieStore.html">官方文件1</a>、<a href="https://rails.ruby.tw/action_controller_overview.html">官方文件2</a>有更詳細的解釋。</p>
+<p>CookieStore 大約可以存 4KB 的資料，其他儲存機制可以存更多，但通常 4KB 已經夠用了。不管用的是那種儲存機制，不建議在 Session 裡存大量資料。特別要避免將複雜的物件儲存在 Session 裡（除了 Ruby 基本物件之外的東西都不要存，比如 Model 的實體）。因為伺服器可能沒辦法在請求之間重新將物件還原，便會導致錯誤發生。</p>
+<p>若使用者的 Session 沒有儲存重要的資料，或存的是短期的資料（比如只是用來顯示提示訊息）。可以考慮使用 <code>ActionDispatch::Session::CacheStore</code>。這會將 Session 存在應用程式所設定的快取裡。優點是利用現有的快取架構來儲存，不用額外管理，或是設定 Session 的儲存機制。缺點是生命週期短、隨時可能會消失。</p>
+<p>選用哪一個通常可以用安全性來判斷，需要安全性的就用Session，沒安全顧慮的就用Cookie。</p>
+<p>參考資料：</p>
+<ul>
+<li>Rails Session 和 Cookie：<a href="https://medium.com/@cindyliu923/rails-session-%E5%92%8C-cookie-70b03299dfc8">這裏</a></li>
+<li>Rails Session、Cookie和Flash：<a href="%5Bhttps://medium.com/@pk60905/rails-session-cookie%E5%92%8Cflash-f6cbb712b876%5D(https://medium.com/@pk60905/rails-session-cookie%E5%92%8Cflash-f6cbb712b876)">這裏</a></li>
+<li>Rails Session 的儲存方式：<a href="https://ruby-china.org/topics/39083">這裏</a></li>
+<li>Rails 實戰聖經：<a href="https://ihower.tw/rails/actioncontroller.html">這裏</a></li>
+<li>（實作）How Rails Sessions Work：<a href="https://www.justinweiss.com/articles/how-rails-sessions-work/">這裏</a></li>
+<li>（實作）Session：<a href="https://wizardforcel.gitbooks.io/rails-tutorial/content/56.html">這裏</a></li>
+</ul>
+<p>關鍵字：CookieStore, CacheStore, Cookie-based Session</p>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/mac/" data-toggle="tooltip" data-placement="top" title="What I&#39;ve Do When I Got a Macbook">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/onboard/" data-toggle="tooltip" data-placement="top" title="Diary on board">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/rails" title="rails">
+                            rails
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ruby-on-rails" title="ruby-on-rails">
+                            ruby-on-rails
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                    
+                    <li>
+                        <a href="mailto:k445566778899k@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=100000397072220">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/ChenHanTing">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/feed/?trk=onboarding-landing">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; HanTing&#39;s Blog 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

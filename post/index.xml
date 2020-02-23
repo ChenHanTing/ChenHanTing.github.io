@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on HanTing&#39;s Blog</title>
+    <link>https://chenhanting.github.io/post/</link>
+    <description>Recent content in Posts on HanTing&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://chenhanting.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Diary on board</title>
+      <link>https://chenhanting.github.io/post/onboard/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://chenhanting.github.io/post/onboard/</guid>
+      <description>&lt;p&gt;以下是在小品的上班記錄。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>What is the difference between Session and Cookie</title>
+      <link>https://chenhanting.github.io/post/session/</link>
+      <pubDate>Thu, 23 Jan 2020 18:32:00 +0800</pubDate>
+      
+      <guid>https://chenhanting.github.io/post/session/</guid>
+      <description>&lt;p&gt;Rails面試中其中之一最容易被問的問題，就是Session與Cookie的差別。Session和Cookie被官方文件，以及Ihower的實戰聖經歸類在Controller的文章中。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>What I&#39;ve Do When I Got a Macbook</title>
+      <link>https://chenhanting.github.io/post/mac/</link>
+      <pubDate>Tue, 21 Jan 2020 13:45:20 +0800</pubDate>
+      
+      <guid>https://chenhanting.github.io/post/mac/</guid>
+      <description>&lt;p&gt;離職後自行購入一台Mac筆電，趁著這個機會紀錄電腦的環境佈置。剛拿到Mac筆電的注意事項及環境安裝&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Frontend Note</title>
+      <link>https://chenhanting.github.io/post/front-end/</link>
+      <pubDate>Mon, 20 Jan 2020 23:41:20 +0800</pubDate>
+      
+      <guid>https://chenhanting.github.io/post/front-end/</guid>
+      <description>&lt;p&gt;到職工作為Ruby on Rails後端工程師，碰到前端的機會實在少之又少。以下統整出2019年到職至今碰到前端相關的所有筆記內容。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Interview</title>
+      <link>https://chenhanting.github.io/post/job/</link>
+      <pubDate>Mon, 20 Jan 2020 20:51:20 +0800</pubDate>
+      
+      <guid>https://chenhanting.github.io/post/job/</guid>
+      <description>&lt;p&gt;這是到職前，一共面試過的所有公司。Ruby on Rails 和其他網頁框架的不一樣，除了使用Rails的公司較少外，Rails 的職缺大多希望即戰力。若您要找的是Rails的工作，剛開始如果會有找不到的感覺很正常，只要多找找就可以找到了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ruby on Rails Note</title>
+      <link>https://chenhanting.github.io/post/rails/</link>
+      <pubDate>Mon, 20 Jan 2020 15:05:20 +0800</pubDate>
+      
+      <guid>https://chenhanting.github.io/post/rails/</guid>
+      <description>&lt;p&gt;上班之後，對於Ruby on Rails的了解大概有個雛形。上班開始接觸&lt;code&gt;gitlab&lt;/code&gt;，與大家一起合作專案，也才開始修改其他人的專案。在不同的專案中，可以看到許多專案背後的歷史，以及工具使用的不同。有些專案善用&lt;code&gt;common&lt;/code&gt;、有些善用&lt;code&gt;services&lt;/code&gt;、有些善用&lt;code&gt;form object&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How I use Hugo to build a Website</title>
+      <link>https://chenhanting.github.io/post/hugo/</link>
+      <pubDate>Sun, 19 Jan 2020 12:39:20 +0800</pubDate>
+      
+      <guid>https://chenhanting.github.io/post/hugo/</guid>
+      <description>&lt;p&gt;現在的發文平台很多，不論會不會程式都能輕易的上手。Facebook、Line、Youtube、IG，它們主要用處還是在於導流。 Blogger、WordPress 是老牌的部落格系統，許多人使用Medium作為部落格系統。Wix 為近期常常在youtube廣告的部落格平台，以及最近誤打誤撞找到的webnote，也都是方便好用的部落格平台&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

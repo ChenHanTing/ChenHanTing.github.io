@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="HanTing&#39;s Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://chenhanting.github.io//https://i0.wp.com/img.hojenjen.com/uploads/2017/10/1506964794-4efdd2f969559e8b1c92e99f32ded48e.jpg">
+    <meta property="twitter:image" content="https://chenhanting.github.io//https://i0.wp.com/img.hojenjen.com/uploads/2017/10/1506964794-4efdd2f969559e8b1c92e99f32ded48e.jpg" />
+    
+
+    
+    <meta name="title" content="Frontend Note" />
+    <meta property="og:title" content="Frontend Note" />
+    <meta property="twitter:title" content="Frontend Note" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Frontend Note-陳漢庭的部落格 | HanTing Blog</title>
+
+    <link rel="canonical" href="/post/front-end/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">HanTing&#39;s Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech">tech</a>
+                        </li>
+                        
+                    
+                    
+		    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('https://i0.wp.com/img.hojenjen.com/uploads/2017/10/1506964794-4efdd2f969559e8b1c92e99f32ded48e.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/html" title="Html">
+                            Html
+                        </a>
+                        
+                        <a class="tag" href="/tags/css" title="CSS">
+                            CSS
+                        </a>
+                        
+                        <a class="tag" href="/tags/bootstrap" title="Bootstrap">
+                            Bootstrap
+                        </a>
+                        
+                    </div>
+                    <h1>Frontend Note</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                            HanTing
+                         
+                        on 
+                        Monday, January 20, 2020
+                        
+                            <span id="/post/front-end/" class="leancloud_visitors meta_data_item" data-flag-title="">
+    <span class="post-meta-item-icon">
+      <span class="octicon octicon-eye"></span> 
+    </span>
+    <i class="fa fa-eye"></i>
+    <span class="old-visitors-count" style="display: none;"></span>
+    <span class="leancloud-visitors-count"></span>
+</span>
+
+
+
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+
+<script>
+	AV.initialize("", "");
+</script>
+
+<script type="text/javascript">
+function showTime(Counter) {
+    var query = new AV.Query(Counter);
+    var entries = [];
+    var $visitors = $(".leancloud_visitors");
+
+    $visitors.each(function() {
+        entries.push($(this).attr("id").trim());
+    });
+
+    query.containedIn('url', entries);
+    query.find()
+        .done(function(results) {
+            var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+            var OLD_COUNT_CONTAINER_REF = '.old-visitors-count';
+
+            
+            
+            
+            
+
+            for (var i = 0; i < results.length; i++) {
+                var item = results[i];
+                var url = item.get('url');
+                var time = item.get('time');
+                var element = document.getElementById(url);
+
+                $(element).find(COUNT_CONTAINER_REF).text(time);
+            }
+            for (var i = 0; i < entries.length; i++) {
+                var url = entries[i];
+                var element = document.getElementById(url);
+                var countSpan = $(element).find(COUNT_CONTAINER_REF);
+                if (countSpan.text() == '') {
+                    var oldCountSpan = $(element).find(OLD_COUNT_CONTAINER_REF).text();
+                    if(oldCountSpan!=''){
+                        countSpan.text(0+parseInt(oldCountSpan));
+                    }else{
+                        countSpan.text(0);          
+                    }
+                }
+            }
+        })
+        .fail(function(object, error) {
+            console.log("Error: " + error.code + " " + error.message);
+        });
+}
+
+function addCount(Counter) {
+    var $visitors = $(".leancloud_visitors");
+    var url = $visitors.attr('id').trim();
+    var title = $visitors.attr('data-flag-title').trim();
+    var query = new AV.Query(Counter);
+
+    query.equalTo("url", url);
+    query.find({
+        success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment("time");
+                counter.save(null, {
+                    success: function(counter) {
+                        var $element = $(document.getElementById(url));
+                        $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+                var newcounter = new Counter();
+                 
+                var acl = new AV.ACL();
+                acl.setPublicReadAccess(true);
+                acl.setPublicWriteAccess(true);
+                newcounter.setACL(acl);
+                 
+                newcounter.set("title", title);
+                newcounter.set("url", url);
+                var OLD_COUNT_CONTAINER_REF = '.old-visitors-count';
+                var $element = $(document.getElementById(url));
+                var oldCountSpan = $element.find(OLD_COUNT_CONTAINER_REF).text();
+                if(oldCountSpan!=''){
+                    newcounter.set("time", parseInt(oldCountSpan)+1);
+                }else{
+ 	                    newcounter.set("time",  1);
+                }
+                newcounter.save(null, {
+                    success: function(newcounter) {
+                        var $element = $(document.getElementById(url));
+                        $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                    },
+                    error: function(newcounter, error) {
+                        console.log('Failed to create');
+                    }
+                });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + " " + error.message);
+        }
+    });
+}
+$(function() {
+    var Counter = AV.Object.extend("Counter");
+    
+    
+    if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+    } else {
+        showTime(Counter);
+    }
+});
+</script>
+
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>到職工作為Ruby on Rails後端工程師，碰到前端的機會實在少之又少。以下統整出2019年到職至今碰到前端相關的所有筆記內容。</p>
+<h3 id="html">HTML</h3>
+<ol>
+<li>
+<p>name 屬性</p>
+<p>name屬性可以說幾乎每個做過Web開發的人都問過，到底元素的ID和Name有什麼區別阿？為什麼有了ID還要有Name呢? 而同樣我們也可以得到最經典的答案：ID就像是一個人的身份證號碼，而Name就像是他的名字，ID顯然是唯一的，而Name是可以重複的。</p>
+<p>之前也遇到ID和Name的問題，在頁面裡輸入了一個input type=&quot;hidden&rdquo;，只寫了一個ID='SliceInfo&rsquo;，賦值後submit，在後台用 Request.Params[&ldquo;SliceInfo&rdquo;]卻怎麼也去不到值。後來恍然大悟因該用Name來標示，於是在input裡加了個 Name='SliceInfo&rsquo;，就一切ok了。</p>
+<p>剛開始對於ID和Name的解答說的太籠統了，當然那個解釋對於ID來說是完全對的，它就是Client端HTML元素的Identity。而Name其實要複雜的多，因為Name有很多種的用途，所以它並不能完全由ID來代替，從而將其取消掉。</p>
+<p>其他參考，請查看： <a href="https://www.itread01.com/content/1550180377.html">html標籤中id和name的區別</a>、<a href="https://mattstauffer.com/blog/a-little-trick-for-grouping-fields-in-an-html-form/">A little trick for grouping fields in an HTML form</a>、<a href="https://flatironschool.com/blog/how-params-works-in-rails">How Params Works in Rails</a>、<a href="https://www.rubyguides.com/2019/06/rails-params/">Rails Parameters</a></p>
+</li>
+</ol>
+<h3 id="css">CSS</h3>
+<p>如果您對CSS的元素還不熟的話，這邊有一些CSS產生器可以參考，功能都很強大：<a href="https://divtable.com/table-styler/">表格</a>、<a href="https://mdbootstrap.com/tools/bootstrap-navbar-generator/">導覽列</a>、<a href="https://www.bestcssbuttongenerator.com/#/39">按鈕</a></p>
+<ol>
+<li>
+<p>margin 與 padding 的用法需要了解</p>
+</li>
+<li>
+<p>CSS Media Queries：在製作 RWD 響應式網頁時，一定會用到的 CSS 語法就是 media，代表的就是針對指定的「媒體」設定樣式，這篇將會對 CSS 的 Media Queries 做個詳細介紹，也幫助自己未來撰寫時，更有個方向與參考，如要查看更多請參考 <a href="https://www.oxxostudio.tw/articles/201810/css-media-queries.html">media-queries</a></p>
+</li>
+<li>
+<p>常用中文字型 - 使用 <a href="http://blog.ja-anything.com/2016/11/25/css-%E5%B8%B8%E7%94%A8%E4%B8%AD%E6%96%87%E5%AD%97%E5%9E%8B-traditional-chinese-font-family/">font-family</a>、使用<a href="https://www.oxxostudio.tw/articles/201811/css-font-family.html">外部字體</a></p>
+</li>
+<li>
+<p>關於icon部分：Favicon是favorites icon的縮寫，亦被稱為website icon（網頁圖示）、page icon（頁面圖示）或urlicon（URL圖示），更多請 <a href="https://zh.wikipedia.org/wiki/Favicon">參考</a></p>
+</li>
+<li>
+<p>CSS讓圖片可以置中且保持比例縮放，詳情請參考<a href="https://digishot.keenchief.com/tw/4163656835/4163656835">這裡</a></p>
+</li>
+</ol>
+<h3 id="bootstrap">Bootstrap</h3>
+<p>如果您對Bootstrap的元素還不熟的話，這邊有一些Bootstrap產生器可以參考，功能都很強大：<a href="https://www.bootdey.com/snippets/view/colored-modals#css">Modal</a></p>
+<ol>
+<li>
+<p>按鈕相關：<a href="https://github.com/mdbootstrap/bootstrap-material-design/issues/119">如何改變字的顏色</a></p>
+</li>
+<li>
+<p>其他可使用樣板（<a href="https://bootsnipp.com/snippets/8M2WK">Card</a>, <a href="https://bootsnipp.com/snippets/KQ">留言</a>）</p>
+</li>
+<li>
+<p>rails 的 <a href="http://simple-form-bootstrap.plataformatec.com.br/examples/horizontal">bootstrap simple_form</a> 語法</p>
+</li>
+<li>
+<p>bootstrap 切版 <a href="https://andy6804tw.github.io/2018/01/06/bootstrap-tutorial(1)/">講解</a>（講得很好）</p>
+</li>
+<li>
+<p>按鈕<a href="https://codedefault.com/s/how-can-i-set-bootstrap-buttons-to-right-align">靠右對齊</a></p>
+</li>
+<li>
+<p>footer 固定在底部，詳情請參考<a href="https://stackoverflow.com/questions/19330611/fixed-footer-in-bootstrap">這裡</a></p>
+</li>
+<li>
+<p>Carousel：<a href="https://mdbootstrap.com/docs/jquery/javascript/carousel/">說明</a></p>
+<p>設定高度：<a href="https://stackoverflow.com/questions/28589911/bootstrap-change-carousel-height">[1]</a>、<a href="https://stackoverflow.com/questions/19582340/make-bootstraps-carousel-both-center-and-responsive">[2]</a>、[[3]](</p>
+</li>
+</ol>
+<h3 id="javscript">Javscript</h3>
+<ol>
+<li>
+<p>this 的用法（<a href="http://www.jstips.co/zh_tw/javascript/return-objects-to-enable-chaining-of-functions/">說明1</a>、<a href="https://www.w3schools.com/js/js_this.asp">說明2</a>）</p>
+</li>
+<li>
+<p>樂透產生器實作（<a href="https://codepen.io/realcreator/pen/yeqpqJ">參考1</a>、<a href="https://codepen.io/ferhatkatesci/pen/Gxzxyg">參考2</a>）</p>
+</li>
+<li>
+<p>JS 陣列的排列組合，請參考 <a href="https://codereview.stackexchange.com/questions/7001/generating-all-combinations-of-an-array">Generating all combinations of an array</a></p>
+</li>
+<li>
+<p>如何使用 <a href="https://codeburst.io/what-are-javascript-generators-and-how-to-use-them-c6f2713fd12e">yield</a></p>
+</li>
+<li>
+<p>JS 使用 <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Functions/rest_parameters">Args</a>，以及Arguments <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Functions/arguments">物件</a></p>
+</li>
+<li>
+<p>Invoke function</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">myFunction</span>() {
+  <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;hello&#39;</span>);
+}
+
+<span style="color:#a6e22e">myFunction</span>()
+<span style="color:#75715e">// calls the function once
+</span></code></pre></div><p>Show <a href="https://developer.mozilla.org/zh-TW/docs/Learn/JavaScript/Building_blocks/Functions">More</a></p>
+</li>
+<li>
+<p>How to get index of an array in <a href="https://appdividend.com/2018/12/19/javascript-array-indexof-example-tutorial/">JS</a></p>
+</li>
+<li>
+<p>I'm trying to fix an old script written for me. I need it to run without <code>&lt;body onload=&quot;init ();&quot;&gt;</code>. I'd like to run the function from inside the script without inline code like that command. Sorry I'm not a JS expert but how do I do this?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">init</span>() {
+        <span style="color:#75715e">// Put your code here
+</span><span style="color:#75715e"></span>    }
+    window.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">init</span>;
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>Or, if you are using jQuery</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">function</span>() {
+    <span style="color:#75715e">// Your code here
+</span><span style="color:#75715e"></span>});
+</code></pre></div><p>因為在我的專案無法使用 <code>&lt;body onload=&quot;init ();&quot;&gt;</code> ，所以要做以上改寫。更多參考源<a href="https://stackoverflow.com/questions/7561315/alternative-to-body-onload-init">請看</a></p>
+</li>
+<li>
+<p>JS 使用 typeof 看型別請<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/typeof">參考</a></p>
+</li>
+<li>
+<p>JS console is more than console.log. Please see <a href="https://medium.com/devgorilla/the-console-object-provides-access-to-the-browsers-debugging-console-354eda9d2d50">this</a>.</p>
+</li>
+</ol>
+<h3 id="jquery">jquery</h3>
+<ol>
+<li>
+<p>Set the default value in dropdownlist using jQuery. Please <a href="https://stackoverflow.com/questions/4781420/set-the-default-value-in-dropdownlist-using-jquery">see</a>.</p>
+</li>
+<li>
+<p>$($0).val() 的 $0 代表取得當前的值，所以當在瀏覽器欲檢查元素按右鍵點選「檢查」，再進去&quot;console&quot;輸入jquery指令，便可以取得當前的值。</p>
+</li>
+<li>
+<p>$('#time_type&rsquo;).val(&lsquo;start_time&rsquo;); 代表在#time_type中指派（assign）一個新值</p>
+</li>
+<li>
+<p>Problem：Is this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">contents</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;contents&#39;</span>);
+</code></pre></div><p>The same as this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">contents</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#contents&#39;</span>);
+</code></pre></div><p>Given that jQuery is loaded?</p>
+<p>Ans1：Not exactly!!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;contents&#39;</span>); <span style="color:#75715e">//returns a HTML DOM Object
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">contents</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#contents&#39;</span>);  <span style="color:#75715e">//returns a jQuery Object
+</span></code></pre></div></li>
+</ol>
+<hr>
+<p>In jQuery, to get the same result as <code>document.getElementById</code>, you can access the jQuery Object and get the first element in the object (Remember JavaScript objects act similar to associative arrays).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">contents</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#contents&#39;</span>)[<span style="color:#ae81ff">0</span>]; <span style="color:#75715e">//returns a HTML DOM Object
+</span></code></pre></div><p>Ans2：No.</p>
+<p>Calling <code>document.getElementById('id')</code> will return a raw DOM object.</p>
+<p>Calling <code>$('#id')</code> will return a jQuery object that wraps the DOM object and provides jQuery methods.</p>
+<p>Thus, you can only call jQuery methods like <code>css()</code> or <code>animate()</code> on the <code>$()</code> call.</p>
+<p>You can also write <code>$(document.getElementById('id'))</code>, which will return a jQuery object and is equivalent to <code>$('#id')</code>.</p>
+<p>You can get the underlying DOM object from a jQuery object by writing <code>$('#id')[0]</code>.</p>
+<p><a href="https://stackoverflow.com/questions/4069982/document-getelementbyid-vs-jquery">Here</a> is the reference.</p>
+<ol start="5">
+<li>
+<p>插入內容 - 使用prepend：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+&lt;<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/jquery/jquery.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+<span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#66d9ef">function</span>(){
+  <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;button&#34;</span>).<span style="color:#a6e22e">click</span>(<span style="color:#66d9ef">function</span>(){
+    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;p&#34;</span>).<span style="color:#a6e22e">prepend</span>(<span style="color:#e6db74">&#34;&lt;b&gt;Hello world!&lt;/b&gt; &#34;</span>);
+  });
+});
+&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;/<span style="color:#f92672">head</span>&gt;
+&lt;<span style="color:#f92672">body</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;This is a paragraph.&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;This is another paragraph.&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;<span style="color:#f92672">button</span>&gt;插入文字&lt;/<span style="color:#f92672">button</span>&gt;
+&lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div></li>
+<li>
+<p>從零開始的jQuery 學習<a href="https://ithelp.ithome.com.tw/articles/10193972">紀錄</a></p>
+</li>
+<li>
+<p><a href="https://jsfiddle.net/vjs0cr9a/1">Modal</a></p>
+</li>
+</ol>
+<h3 id="版型收集">版型收集</h3>
+<ol>
+<li>
+<p>切版（來自<a href="https://codepen.io/EvanSun/pens/public/?cursor=ZD0wJm89MSZwPTEmdj0zNDgwMDIyNw==">同事</a>的codepen）</p>
+</li>
+<li>
+<p>Card：<a href="https://codepen.io/Moiety/pen/gGKRog">範例1</a>、<a href="https://bootsnipp.com/snippets/8M2WK">範例2</a>、<a href="https://codepen.io/collection/XLRrqW/">範例3</a>、<a href="https://codepen.io/andytran/pen/xweoPN">範例4</a></p>
+</li>
+<li>
+<p>可以參考的樣版：<a href="https://getbootstrap.com/docs/4.4/examples/">範例1</a>、 <a href="https://bootsnipp.com/">範例2</a></p>
+</li>
+<li>
+<p>登入畫面樣板：<a href="https://bootsnipp.com/snippets/vl4R7">範例1</a>、 <a href="https://bootsnipp.com/snippets/bxzmb">範例2</a></p>
+</li>
+<li>
+<p>導覽列：<a href="https://codesandbox.io/s/flexbox-nav-version-1-hho4o">範例1</a>、 <a href="https://github.com/wilsmex/edu/tree/master/navbar-responsive">範例2</a></p>
+</li>
+<li>
+<p>Modal：<a href="https://jsfiddle.net/vjs0cr9a/1">範例1</a></p>
+</li>
+</ol>
+<h3 id="書籍範例">書籍範例</h3>
+<ol>
+<li>Html &amp; CSS 網站設計建置優化之道：<a href="http://www.htmlandcssbook.com/code-samples/">範例程式</a></li>
+</ol>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/job/" data-toggle="tooltip" data-placement="top" title="Interview">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/mac/" data-toggle="tooltip" data-placement="top" title="What I&#39;ve Do When I Got a Macbook">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/rails" title="rails">
+                            rails
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ruby-on-rails" title="ruby-on-rails">
+                            ruby-on-rails
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                    
+                    <li>
+                        <a href="mailto:k445566778899k@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/profile.php?id=100000397072220">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/ChenHanTing">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/feed/?trk=onboarding-landing">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; HanTing&#39;s Blog 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>
